@@ -7,10 +7,10 @@
 
 // window.example = example;
 
-const championData = []
-for (let champ in LOL.data) {
-  championData.push(LOL.data[champ]);
-}
+let championData = []
+// for (let champ in LOL.data) {
+//   championData.push(LOL.data[champ]);
+// }
 
 window.championData = championData;
 
