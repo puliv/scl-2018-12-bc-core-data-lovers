@@ -69,8 +69,32 @@ window.championManage = {
     })
     return filteredData;
     
-  }
+  },
+  averageStats: (data) => {
+    let championStats = [];
+    data.forEach(champ => {
+      // console.log(Object.keys(champ));
+      Object.keys(champ.stats).forEach(key => {
+        if (championStats.indexOf(key) === -1) {
+          championStats.push(key);
+        }
+      })
+    })
+    let averageChampion = {};
+    championStats.forEach(stat => {
+      averageChampion[stat] = [];
+    })
+    championStats.forEach(stat => {
+      data.forEach(champ => {
+        averageChampion[stat].push(champ.stats[stat])
+      })
+    })
+    championStats.forEach(stat => {
+      averageChampion[stat] = averageChampion[stat].reduce((acc, current)=> acc+current)/data.length;
+    })
+    return averageChampion;
 
+  }
 }
 //ESTO ERA PARA VER LOS RANGOS DE LOS CHAMPIONS
 // let rangos = []
