@@ -31,9 +31,9 @@ document.getElementById('fetcheame').addEventListener('click', ()=> {
     fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
     .then(data => data.json())
     .then (data => {
-        for (let champ in data.data) {
-            championData.push(data.data[champ]);
-          }
+    for (let champ in data.data) {
+        championData.push(data.data[champ]);
+        }
     })
     .then(() => console.log(championData))
 })
