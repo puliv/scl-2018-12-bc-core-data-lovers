@@ -1,24 +1,26 @@
-document.getElementById('para-probar').innerHTML += `
-<button type="button" class="probando">Probando</button>
-`;
-let probando = document.getElementsByClassName('probando')
 
-// para el select
-document.getElementById('pet-select').addEventListener('change', () => {
-    alert(document.getElementById('pet-select').value);
-})
+//PROBANDO CLASS ELEMENT PARA EL DOM Y FUNCION QUE LE AGREGA FUNCIONES A LAS CLASES
+// document.getElementById('para-probar').innerHTML += `
+// <button type="button" class="probando">Probando</button>
+// `;
+// let probando = document.getElementsByClassName('probando')
 
-function again() {
-    for (let i = 0; i < probando.length; i++) {
-    probando[i].addEventListener('click', () => {
-        document.getElementById('para-probar').innerHTML += `hola ${i}`;
-        document.getElementById('para-probar').innerHTML += `<button type="button" class="probando">Probando</button>`
-        again();
-})
+// // para el select
+// document.getElementById('pet-select').addEventListener('change', () => {
+//     alert(document.getElementById('pet-select').value);
+// })
 
-}
-}
-again();
+// function again() {
+//     for (let i = 0; i < probando.length; i++) {
+//     probando[i].addEventListener('click', () => {
+//         document.getElementById('para-probar').innerHTML += `hola ${i}`;
+//         document.getElementById('para-probar').innerHTML += `<button type="button" class="probando">Probando</button>`
+//         again();
+// })
+
+// }
+// }
+// again();
 
 
 
@@ -27,8 +29,18 @@ again();
 // al querer asignarle un eventlistener si fueron creados con html
 
 
-document.getElementById('fetcheame').addEventListener('click', ()=> {
-    fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
+// document.getElementById('fetcheame').addEventListener('click', ()=> {
+//     fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
+//     .then(data => data.json())
+//     .then (data => {
+//     for (let champ in data.data) {
+//         championData.push(data.data[champ]);
+//         }
+//     })
+//     .then(() => console.log(championData))
+// })
+
+fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
     .then(data => data.json())
     .then (data => {
     for (let champ in data.data) {
@@ -36,4 +48,4 @@ document.getElementById('fetcheame').addEventListener('click', ()=> {
         }
     })
     .then(() => console.log(championData))
-})
+
