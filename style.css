@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Beaufort";
+    src: url("fonts/Beaufort-Regular.woff") format('woff');
+}
+
+@font-face {
+    font-family: "Beaufort";
+    src: url("fonts/Beaudort-Bold.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Beaufort";
+    src: url("fonts/Beaufort-Italic.woff") format('woff');
+    font-style: italic;
+}
+
+
+body {
+    background-color: #000000;
+}
+
+#navbar-header {
+    position: absolute;
+    top: 85%;
+    left: 3%;
+}
+
+
