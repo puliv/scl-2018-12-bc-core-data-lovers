@@ -15,3 +15,15 @@
     font-style: italic;
 }
 
+
+body {
+    background-color: #000000;
+}
+
+#navbar-header {
+    position: absolute;
+    top: 85%;
+    left: 3%;
+}
+
+
