@@ -15,7 +15,6 @@
     font-style: italic;
 }
 
-
 body {
     background-color: #000000;
 }
@@ -23,7 +22,8 @@ body {
 #navbar-header {
     position: absolute;
     top: 85%;
-    left: 3%;
+    left: 6%;
 }
-
-
+. col s1{
+    color:white;
+}
