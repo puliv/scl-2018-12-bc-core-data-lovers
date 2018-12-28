@@ -38,7 +38,7 @@ body {
 }
 
 .card {
-    margin: 1vw 2.5vw;
+    margin: 1vw 3.2vw;
     border: 1px solid #F1E6D0;
     border-radius: 10px;
     background: #0A0A0C;
@@ -64,10 +64,28 @@ body {
 .card .card-content .card-title {
     margin-bottom: 0;
 }
-
-#myChart {
-    display: inline-block;
+#filters {
+    color: #F1E6D0;
+    font-size: 2vw;
+    position: absolute;
+    top: 16vw;
+    width: 99%;
+    margin: 5px;
+    text-align: center;
 }
+
+.filter-box {
+    color: #F1E6D0;
+    border: 1px solid #F1E6D0;
+    border-radius: 10px;
+    font-size: 2vw;
+
+}
+
+label {
+    padding-right: 2vw;
+}
+
 
 
 /* #champions {
