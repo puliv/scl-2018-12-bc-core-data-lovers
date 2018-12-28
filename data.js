@@ -7,7 +7,7 @@
 
 // window.example = example;
 
-let championData = []
+let championData = [];
 // for (let champ in LOL.data) {
 //   championData.push(LOL.data[champ]);
 // }

@@ -3,19 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Data Lovers</title>
     <link rel="icon" href="ImgFigma/iconoLoL.png">
   </head>
   <body>
-    <header class="navbar-fixed">
-      <img id="img-header" class="responsive-img" src="Img\runeterra-freljord-02-desktop2.jpg" alt="Fondo Runaterra">
-      <img id="navbar-header" class="responsive-img" src="Img\main-nav-bg.png" alt="Barra navegacion">
+    <header>
+      <img id="img-header" class="responsive-img" src="Img\img-header.png" alt="Fondo Runaterra">
+      <!-- <img id="navbar-header" class="responsive-img" src="Img\div-nav-bg.png" alt="Barra navegacion"> -->
+      <div id="nav-buttons" class="center-align">
+        <button id="champions">Champions</button>
+        <button id="flame">Flame</button>
+      </div>
     </header>
   <section>
       <div id="Flame">
@@ -72,10 +74,47 @@
     </select>
 
     <button id="fetcheame">Fetch!</button> -->
+    <div id="filters" class="container row center-align">
+      <form action="#" id="champion-filters">
+          <p>
+            <label>
+              <input id="assassin" type="checkbox" value="Assassin" class="filter"/>
+              <span>Assassin</span>
+            </label>
+            <label>
+              <input id="fighter" type="checkbox" value="Fighter" class="filter"/>
+              <span>Fighter</span>
+            </label>
+            <label>
+              <input id="mage" type="checkbox" value="Mage" class="filter"/>
+              <span>Mage</span>
+            </label>
+            <label>
+              <input id="marksman" type="checkbox" value="Marksman" class="filter"/>
+              <span>Marksman</span>
+            </label>
+            <label>
+              <input id="support" type="checkbox" value="Support" class="filter"/>
+              <span>Support</span>
+              </label>
+            <label>
+              <input id="melee" type="checkbox" value="Melee" class="filter"/>
+              <span>Melee</span>
+            </label>
+            <label>
+              <input id="ranged" type="checkbox" value="Ranged" class="filter"/>
+              <span>Ranged</span>
+            </label>
+          </p>
+        </form>
+              
     </div>
-    <!-- <div id="para-probar">
-      
-    </div> -->
+    <div id="champ-container" class="container row">       
+    </div>
+    <div id="champ-container-mobile" class="container row">
+    </div>
+    <div id="root">
+    </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <!-- <script src="./data/steam/steam.js"></script> -->
