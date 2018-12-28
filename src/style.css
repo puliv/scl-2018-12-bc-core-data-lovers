@@ -86,6 +86,31 @@ label {
     padding-right: 2vw;
 }
 
+#champ-container-mobile {
+    display: none;
+}
+
+.mobile-version {
+    padding: 3px;
+}
+
+div.card-content.mobile-version {
+    padding: 0;
+    font-size: 1vw;
+}
+
+div.card.mobile-version {
+    min-height: 80px;
+    min-width: 50px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+div#filters.container.row.center-align {
+    margin: 0;
+}
+
+
 
 
 /* #champions {
@@ -116,6 +141,33 @@ label {
 @media only screen and (max-width: 376px) {
     #champions, #flame {
         top: -11.7vw;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    div#champ-container-mobile.container.row {
+        margin: 0;
+        width: 90%;
+        position: relative;
+        top: 10vw;
+    }
+}
+
+@media only screen and (max-width: 865px) {
+    #champ-container {
+        display: none;
+    }
+    #champ-container-mobile {
+        display: block;
+    }
+    html {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .row .col.s3 {
+    max-height: 198px;
     }
 }
 

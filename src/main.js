@@ -44,14 +44,14 @@ fetch('data/lol/lol.json')
     .then(data => data.json())
     .then (data => {
     for (let champ in data.data) {
-        championData.push(data.data[champ]);
+        window.championData.push(data.data[champ]);
         }
     })
-    .then(() => console.log(championData))
 
 
 function showChamps (data) {
     document.getElementById("champ-container").innerHTML = "";
+    document.getElementById("champ-container-mobile").innerHTML = "";
     data.forEach(champ => {
         document.getElementById("champ-container").innerHTML += `
         <div class="card col s3">
@@ -69,6 +69,20 @@ function showChamps (data) {
         </div>
         `
     })
+    data.forEach(champ => {
+        document.getElementById("champ-container-mobile").innerHTML += `
+        <div class="col s2">
+            <div class="card mobile-version">
+                <div class="card-image">
+                    <img src="${champ.img}">
+                </div>
+                <div class="card-content mobile-version">
+                ${champ.name}
+                </div>
+            </div>
+        </div>
+        `
+    })
 }
 
 
@@ -81,7 +95,7 @@ let championCharts = [];
 function initializeCharts (data) {
     championCharts = [];
     for (let i = 0; i<championGraphsCanvases.length; i++) {
-        championCharts[i] = new Chart(championGraphsCanvases[i], {
+        championCharts[i] = new window.Chart(championGraphsCanvases[i], {
             type: 'horizontalBar',
         data: {
             labels: ["Attack", "Defense", "Magic", "Difficulty"],
@@ -132,8 +146,8 @@ document.getElementById("champion-filters").addEventListener("change", () => {
             filtersActive.push(filters[i].value);
         }
     }
-    showChamps(championManage.filterData(championData, filtersActive));
-    initializeCharts(championManage.filterData(championData, filtersActive));
+    showChamps(window.championManage.filterData(window.championData, filtersActive));
+    initializeCharts(window.championManage.filterData(window.championData, filtersActive));
     
 })
 
@@ -141,8 +155,8 @@ document.getElementById("champion-filters").addEventListener("change", () => {
 
 
 function showChampsData () {
-    showChamps(championData);
-    initializeCharts(championData);
+    showChamps(window.championData);
+    initializeCharts(window.championData);
 }
 
 window.onload = showChampsData;
