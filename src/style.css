@@ -17,13 +17,158 @@
 
 body {
     background-color: #000000;
+    font-family: "Beaufort";
 }
 
-#navbar-header {
+
+#champions, #flame {
+    font-family: "Beaufort";
+    color: #F1E6D0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.8vw;
+    top: -8.7vw;
+    border: 0;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    padding: 0;
+    position: relative;
+}
+
+.card {
+    margin: 1vw 3.2vw;
+    border: 1px solid #F1E6D0;
+    border-radius: 10px;
+    background: #0A0A0C;
+    color: #F1E6D0;
+}
+
+.row .col.s3 {
+    margin-left: 2.5vw;
+}
+
+.card .card-reveal {
+    background: #0A0A0C;
+}
+.img-champion {
+    padding: 10px;
+}
+
+.champ-title {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.card .card-content .card-title {
+    margin-bottom: 0;
+}
+#filters {
+    color: #F1E6D0;
+    font-size: 2vw;
     position: absolute;
-    top: 85%;
-    left: 6%;
+    top: 16vw;
+    width: 99%;
+    margin: 5px;
+    text-align: center;
 }
-. col s1{
-    color:white;
+
+.filter-box {
+    color: #F1E6D0;
+    border: 1px solid #F1E6D0;
+    border-radius: 10px;
+    font-size: 2vw;
+
 }
+
+label {
+    padding-right: 2vw;
+}
+
+#champ-container-mobile {
+    display: none;
+}
+
+.mobile-version {
+    padding: 3px;
+}
+
+div.card-content.mobile-version {
+    padding: 0;
+    font-size: 1vw;
+}
+
+div.card.mobile-version {
+    min-height: 80px;
+    min-width: 50px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+div#filters.container.row.center-align {
+    margin: 0;
+}
+
+
+
+
+/* #champions {
+    position: relative;
+    float: right;
+    right: 51%;
+}
+
+#flame {
+    position: relative;
+    float: left;
+    left: 53%;
+} */
+
+
+@media only screen and (max-width: 845px) {
+    #champions, #flame {
+        top: -9.3vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #champions, #flame {
+        top: -9.7vw;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    #champions, #flame {
+        top: -11.7vw;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    div#champ-container-mobile.container.row {
+        margin: 0;
+        width: 90%;
+        position: relative;
+        top: 10vw;
+    }
+}
+
+@media only screen and (max-width: 865px) {
+    #champ-container {
+        display: none;
+    }
+    #champ-container-mobile {
+        display: block;
+    }
+    html {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .row .col.s3 {
+    max-height: 198px;
+    }
+}
+
+/* 865px de ancho es el tope para que se vean bien los charts de la cards */
+

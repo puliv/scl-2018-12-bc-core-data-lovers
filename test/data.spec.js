@@ -3,7 +3,7 @@ require('../src/data.js');
 
 describe('championManage.sortData', () => {
   it('championManage.sortData debería ser una función', () => {
-    expect(typeof championManage.championManage.sortData).toBe('function');
+    expect(typeof window.championManage.sortData).toBe('function');
   });
 
   it('Debería devolver el champion "Annie" para championManage.sortData(championData, "key", "ascending")[0]', () => {
@@ -26,7 +26,7 @@ describe('championManage.sortData', () => {
 
 describe('championManage.filterData', () => {
   it('championManage.filterData debería ser una función', () => {
-    expect(typeof championManage.championManage.filterData).toBe('function');
+    expect(typeof window.championManage.filterData).toBe('function');
   });    
 
   it('Debería devolver a los champions "Aatrox, Ahri, Akali, Alistar, Amumu, Anivia, Annie, Ashe, Aurelion Sol, Azir" para championManage.filterData(championData, "A")', () => {
@@ -57,7 +57,7 @@ describe('championManage.filterData', () => {
 
 describe('championManage.computeStats', () => {
   it('championManage.computeStats debería ser una función', () => {
-    expect(typeof championManage.championManage.filterData).toBe('function');
+    expect(typeof window.championManage.filterData).toBe('function');
   }); 
   
   it('Debería devolver el promedio de cada stat de todos los champions al aplicar championManage.computeStats(championData), valor de 550.1820895522388', () => {
