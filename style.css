@@ -18,12 +18,88 @@
 
 body {
     background-color: #000000;
+    font-family: "Beaufort";
 }
 
-#navbar-header {
-    position: absolute;
-    top: 85%;
-    left: 3%;
+
+#champions, #flame {
+    font-family: "Beaufort";
+    color: #F1E6D0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.8vw;
+    top: -8.7vw;
+    border: 0;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    padding: 0;
+    position: relative;
 }
 
+.card {
+    margin: 1vw 2.5vw;
+    border: 1px solid #F1E6D0;
+    border-radius: 10px;
+    background: #0A0A0C;
+    color: #F1E6D0;
+}
+
+.row .col.s3 {
+    margin-left: 2.5vw;
+}
+
+.card .card-reveal {
+    background: #0A0A0C;
+}
+.img-champion {
+    padding: 10px;
+}
+
+.champ-title {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.card .card-content .card-title {
+    margin-bottom: 0;
+}
+
+#myChart {
+    display: inline-block;
+}
+
+
+/* #champions {
+    position: relative;
+    float: right;
+    right: 51%;
+}
+
+#flame {
+    position: relative;
+    float: left;
+    left: 53%;
+} */
+
+
+@media only screen and (max-width: 845px) {
+    #champions, #flame {
+        top: -9.3vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #champions, #flame {
+        top: -9.7vw;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    #champions, #flame {
+        top: -11.7vw;
+    }
+}
+
+/* 865px de ancho es el tope para que se vean bien los charts de la cards */
 

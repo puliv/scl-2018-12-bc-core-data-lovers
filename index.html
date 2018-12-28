@@ -7,16 +7,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Data Lovers</title>
     <link rel="icon" href="ImgFigma/iconoLoL.png">
   </head>
   <body>
-    <header class="navbar-fixed">
-      <img id="img-header" class="responsive-img" src="Img\runeterra-freljord-02-desktop2.jpg" alt="Fondo Runaterra">
-      <img id="navbar-header" class="responsive-img" src="Img\main-nav-bg.png" alt="Barra navegacion">
+    <header>
+      <img id="img-header" class="responsive-img" src="Img\img-header.png" alt="Fondo Runaterra">
+      <!-- <img id="navbar-header" class="responsive-img" src="Img\main-nav-bg.png" alt="Barra navegacion"> -->
+      <div id="nav-buttons" class="center-align">
+        <button id="champions">CHAMPIONS</button>
+        <button id="flame">FLAME</button>
+      </div>
     </header>
+    <main id="champ-container" class="container row">
+        <!-- <div class="card col s3">
+            <div class="card-image waves-effect waves-block waves-light">
+             <a href=""><img class="responsive-img img-champion" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"></a>
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Aatrox<i class="material-icons right">more_vert</i></span>
+              <p class="champ-title">the Darkin Blade</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Basic Info<i class="material-icons right">close</i></span>
+              <canvas class="champion-chart"></canvas>
+            </div>
+          </div> -->
+          
+    </main>
     <div id="root">
       <!-- <button id="probando" class="probando">Probando</button> -->
       <!-- <select id="pet-select">
