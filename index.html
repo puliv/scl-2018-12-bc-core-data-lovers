@@ -17,25 +17,46 @@
       <img id="img-header" class="responsive-img" src="Img\img-header.png" alt="Fondo Runaterra">
       <!-- <img id="navbar-header" class="responsive-img" src="Img\main-nav-bg.png" alt="Barra navegacion"> -->
       <div id="nav-buttons" class="center-align">
-        <button id="champions">CHAMPIONS</button>
-        <button id="flame">FLAME</button>
+        <button id="champions">Champions</button>
+        <button id="flame">Flame</button>
       </div>
     </header>
-    <main id="champ-container" class="container row">
-        <!-- <div class="card col s3">
-            <div class="card-image waves-effect waves-block waves-light">
-             <a href=""><img class="responsive-img img-champion" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"></a>
-            </div>
-            <div class="card-content">
-              <span class="card-title activator">Aatrox<i class="material-icons right">more_vert</i></span>
-              <p class="champ-title">the Darkin Blade</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title">Basic Info<i class="material-icons right">close</i></span>
-              <canvas class="champion-chart"></canvas>
-            </div>
-          </div> -->
-          
+    <div id="filters" class="container row center-align">
+      <form action="#" id="champion-filters">
+          <p>
+            <label>
+              <input id="assassin" type="checkbox" value="Assassin" class="filter"/>
+              <span>Assassin</span>
+            </label>
+            <label>
+              <input id="fighter" type="checkbox" value="Fighter" class="filter"/>
+              <span>Fighter</span>
+            </label>
+            <label>
+              <input id="mage" type="checkbox" value="Mage" class="filter"/>
+              <span>Mage</span>
+            </label>
+            <label>
+              <input id="marksman" type="checkbox" value="Marksman" class="filter"/>
+              <span>Marksman</span>
+            </label>
+            <label>
+              <input id="support" type="checkbox" value="Support" class="filter"/>
+              <span>Support</span>
+              </label>
+            <label>
+              <input id="melee" type="checkbox" value="Melee" class="filter"/>
+              <span>Melee</span>
+            </label>
+            <label>
+              <input id="ranged" type="checkbox" value="Ranged" class="filter"/>
+              <span>Ranged</span>
+            </label>
+          </p>
+        </form>
+              
+    </div>
+    <main id="champ-container" class="container row">       
     </main>
     <div id="root">
       <!-- <button id="probando" class="probando">Probando</button> -->

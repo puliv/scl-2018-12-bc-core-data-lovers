@@ -51,6 +51,7 @@ fetch('data/lol/lol.json')
 
 
 function showChamps (data) {
+    document.getElementById("champ-container").innerHTML = "";
     data.forEach(champ => {
         document.getElementById("champ-container").innerHTML += `
         <div class="card col s3">
@@ -77,14 +78,15 @@ function showChamps (data) {
 let championGraphsCanvases = document.getElementsByClassName("champion-chart");
 let championCharts = [];
 
-function initializeCharts () {
+function initializeCharts (data) {
+    championCharts = [];
     for (let i = 0; i<championGraphsCanvases.length; i++) {
         championCharts[i] = new Chart(championGraphsCanvases[i], {
             type: 'horizontalBar',
         data: {
             labels: ["Attack", "Defense", "Magic", "Difficulty"],
             datasets: [{
-                data: [championData[i].info.attack, championData[i].info.defense, championData[i].info.magic, championData[i].info.difficulty],
+                data: [data[i].info.attack, data[i].info.defense, data[i].info.magic, data[i].info.difficulty],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -107,6 +109,11 @@ function initializeCharts () {
                     ticks: {
                         beginAtZero:true
                     }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
                 }]
             },
             legend: {
@@ -117,9 +124,25 @@ function initializeCharts () {
     }
 }
 
+document.getElementById("champion-filters").addEventListener("change", () => {
+    let filtersActive = [];
+    const filters = document.getElementsByClassName("filter");
+    for (let i = 0; i<filters.length; i++) {
+        if (filters[i].checked === true) {
+            filtersActive.push(filters[i].value);
+        }
+    }
+    showChamps(championManage.filterData(championData, filtersActive));
+    initializeCharts(championManage.filterData(championData, filtersActive));
+    
+})
+
+
+
+
 function showChampsData () {
     showChamps(championData);
-    initializeCharts();
+    initializeCharts(championData);
 }
 
 window.onload = showChampsData;
