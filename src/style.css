@@ -21,7 +21,7 @@ body {
 }
 
 
-#champions, #flame {
+#about-lolapp, #champions, #flame {
     font-family: "Beaufort";
     color: #F1E6D0;
     background-color: transparent;
@@ -109,9 +109,6 @@ div#filters.container.row.center-align {
     margin: 0;
 }
 
-
-
-
 /* #champions {
     position: relative;
     float: right;
@@ -126,19 +123,23 @@ div#filters.container.row.center-align {
 
 
 @media only screen and (max-width: 845px) {
-    #champions, #flame {
+    #champions, #flame, #about-lolapp {
         top: -9.3vw;
     }
 }
 
 @media only screen and (max-width: 650px) {
-    #champions, #flame {
+    #champions, #flame, #about-lolapp {
         top: -9.7vw;
+    }
+    .col-s6, .col-s12-offset-s12{
+        width: 100%;
+        float: none;
     }
 }
 
 @media only screen and (max-width: 376px) {
-    #champions, #flame {
+    #champions, #flame, #about-lolapp {
         top: -11.7vw;
     }
 }
@@ -172,3 +173,89 @@ div#filters.container.row.center-align {
 
 /* 865px de ancho es el tope para que se vean bien los charts de la cards */
 
+#filters, #champ-container, #champ-container-mobile{
+    display: none;
+}
+
+#flame-section p {
+color: #f1e6d0;
+}
+
+#flame-section {
+    position: relative;
+    top: 2vw;
+}
+
+.row{
+    width:100%;
+    height: auto;
+}
+    
+#text-lolapp, #image-lolapp{
+    width: 50%;
+    float: left;
+    padding-top: 30px;
+}
+#image-report img, #image-report-two img{
+    margin: 0 auto;
+    display: block;
+}
+
+#image-report, #image-report-two, #image-lolapp{
+    padding: 5px;
+    border: solid;
+    border-radius: 10px;
+    border-color: #937341;
+}
+
+#image-lolapp{
+    margin-top:55px;
+}
+
+#text-lolapp p {
+    padding: 0 15px;
+    text-align: justify;
+}
+#text-lolapp a{
+    display: block;
+    margin: 0 auto;
+    width:200px;
+}
+#about-lolapp{
+    color:#f1e6d0;
+}
+
+@media only screen and (min-width: 600px) {
+    div.container{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #image-lolapp{
+        width: 150%;
+        height: 150%;
+    }
+    #text-lolapp {
+        display: block;
+        margin: 0 10px;
+    }
+}
+
+#buttons{
+    background-color: #0a0a0c;
+    border: solid;
+    border-radius: 10px;
+    border-color: #937341;
+    line-height: 30px !important;
+    }
+
+#buttons:hover{
+    border: solid;
+    border-radius: 10px;
+    border-color: white;
+}
+
+.text-color{
+    color: #937341;
+}
