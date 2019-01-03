@@ -155,6 +155,7 @@ document.getElementById("champion-filters").addEventListener("change", () => {
     }
     showChamps(window.championManage.filterData(window.championData, filtersActive));
     initializeCharts(window.championManage.filterData(window.championData, filtersActive));
+    champIndividualDiv(window.championManage.filterData(window.championData, filtersActive));
     
 })
 
@@ -174,6 +175,7 @@ document.getElementById("name").addEventListener("change", () => {
     }
     showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
     initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
+    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
     
 })
 
@@ -190,6 +192,7 @@ document.getElementById("key").addEventListener("change", () => {
     }
     showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
     initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
+    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
     
 })
 
@@ -197,6 +200,8 @@ function champIndividualDiv(data) {
     let championImages = document.getElementsByClassName("img-champion");
     for (let i= 0; i<championImages.length; i++) {
         championImages[i].addEventListener("click", () => {
+            document.getElementById("filters").style.display = "none";
+            document.getElementById("sort-options").style.display = "none";
             document.getElementById("champ-container").style.display = "none";
             document.getElementById("champ-container-mobile").style.display = "none";
             document.getElementById("individual-champs").style.display = "block";
@@ -319,13 +324,13 @@ function champIndividualDiv(data) {
                         datasets: [{
                             label: data[i].name,
                             data: [data[i].stats.hp, data[i].stats.hpperlevel, data[i].stats.mp, data[i].stats.mpperlevel, data[i].stats.movespeed, data[i].stats.armor, data[i].stats.armorperlevel, data[i].stats.spellblock, data[i].stats.spellblockperlevel, data[i].stats.attackrange, data[i].stats.hpregen, data[i].stats.hpregenperlevel, data[i].stats.mp, data[i].stats.mpregenperlevel, data[i].stats.crit, data[i].stats.critperlevel, data[i].stats.attackdamage, data[i].stats.attackdamageperlevel, data[i].stats.attackspeedoffset, data[i].stats.attackspeedperlevel],
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.8)',
                             borderWidth: 1
                         },
                         {
                             label: 'Champ Promedio',
                             data: [averageChampion.hp, averageChampion.hpperlevel, averageChampion.mp, averageChampion.mpperlevel, averageChampion.movespeed, averageChampion.armor, averageChampion.armorperlevel, averageChampion.spellblock, averageChampion.spellblockperlevel, averageChampion.attackrange, averageChampion.hpregen, averageChampion.hpregenperlevel, averageChampion.mp, averageChampion.mpregenperlevel, averageChampion.crit, averageChampion.critperlevel, averageChampion.attackdamage, averageChampion.attackdamageperlevel, averageChampion.attackspeedoffset, averageChampion.attackspeedperlevel],
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.8)',
                             borderWidth: 1
                         }
                     ],
@@ -350,11 +355,15 @@ function champIndividualDiv(data) {
                 )
 
             }
-            initializeCompare(championData);
+            initializeCompare(data);
         })
     }
 
 }
+
+document.getElementById("champions").addEventListener("click", () => {
+    document.location = "index.html";
+});
 
 
 // var ctx = document.getElementById("compare-chart").getContext('2d');
@@ -393,7 +402,7 @@ function champIndividualDiv(data) {
 // });
 
 
-function showChampsData () {
+function showChampsData() {
     showChamps(window.championData);
     initializeCharts(window.championData);
     champIndividualDiv(window.championData);

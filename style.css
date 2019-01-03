@@ -36,7 +36,31 @@ body {
     margin-left: 10vw;
     padding: 0;
     position: relative;
+    cursor: pointer;
+    z-index: 2;
 }
+
+#champions:hover, #flame:hover {
+    /* color: #69502B; */
+    color: #937350;
+}
+
+#search-input {
+    box-sizing: border-box;
+    background: #FAFAFA;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid #F1E6D0;
+}
+
+#search-input::placeholder {
+    color: #a0a0a0;
+    font-family: FontAwesome, Arial;
+}
+
+/* #champions:hover {
+    background: url(Img/hover-effect.png) 50% -3px no-repeat transparent;
+} */
 
 .card {
     margin: 1vw 3.2vw;
@@ -152,8 +176,9 @@ input.select-dropdown.dropdown-trigger {
 
 #individual-champs {
     position: relative;
-    top: 5vw;
+    top: -10vw;
     display: none;
+    z-index: 1;
 }
 
 #champ-name-title {
