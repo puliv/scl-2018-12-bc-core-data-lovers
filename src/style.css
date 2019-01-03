@@ -19,6 +19,7 @@
 body {
     background-color: #000000;
     font-family: "Beaufort";
+    color: #F1E6D0;
 }
 
 
@@ -110,8 +111,27 @@ div#filters.container.row.center-align {
     margin: 0;
 }
 
+#name-order, #release-order {
+    /* float: right; */
+    color: #c9aa71;
+    background-color: #0A0A0C;
+    border: 1px solid #F1E6D0;
+}
 
+div#champ-container.container.row {
+    position: relative;
+    top: 10vw;
+    /* display:none; */
+}
 
+input.select-dropdown.dropdown-trigger {
+    color: #F1E6D0;
+    font-size: 1.5vw;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #F1E6D0;
+}
 
 /* #champions {
     position: relative;
@@ -125,6 +145,49 @@ div#filters.container.row.center-align {
     left: 53%;
 } */
 
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #F1E6D0;
+    background-color: #000000;
+}
+
+#individual-champs {
+    position: relative;
+    top: 5vw;
+    display: none;
+}
+
+#champ-name-title {
+    color: #F1E6D0;
+}
+
+#champ-name {
+    font-size: 5vw;
+    margin-bottom: 0;
+}
+
+#champ-title {
+    margin-top: 0;
+    font-style: italic;
+}
+
+table {
+    color: #F1E6D0;
+    border: 0.5px solid #F1E6D0;
+    border-collapse: separate;
+}
+
+td, th {
+    padding: 0;
+}
+
+#compare {
+    top: 6vw;
+}
+
+#compare-chart-container {
+    position: relative;
+    top: 10vw;
+}
 
 @media only screen and (max-width: 845px) {
     #champions, #flame {
@@ -149,7 +212,8 @@ div#filters.container.row.center-align {
         margin: 0;
         width: 90%;
         position: relative;
-        top: 10vw;
+        top: 25vw;
+        /* left: 3vw; */
     }
 }
 
@@ -159,6 +223,9 @@ div#filters.container.row.center-align {
     }
     #champ-container-mobile {
         display: block;
+        position: relative;
+        top: 10vw;
+
     }
     html {
         width: 100vw;
@@ -170,6 +237,8 @@ div#filters.container.row.center-align {
     max-height: 198px;
     }
 }
+
+
 
 /* 865px de ancho es el tope para que se vean bien los charts de la cards */
 
