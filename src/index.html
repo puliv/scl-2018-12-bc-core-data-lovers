@@ -6,14 +6,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
-    <title>Data Lovers</title>
+    <title>LOLApp</title>
     <link rel="icon" href="Img/iconoLoL.png">
   </head>
   <body>
     <header>
       <img id="img-header" class="responsive-img" src="Img\img-header.png" alt="Fondo Runaterra">
-      <!-- <img id="navbar-header" class="responsive-img" src="Img\div-nav-bg.png" alt="Barra navegacion"> -->
       <div id="nav-buttons" class="center-align">
         <button id="champions">Champions</button>
         <button id="flame">Flame</button>
@@ -52,8 +52,8 @@
             </label>
           </p>
         </form>  
-        <div class="container row">
-          <div class="input-field col s4 offset-s2">
+        <div id="sort-options" class="container row">
+          <div class="input-field col m3">
             <select id="name">
               <option value="" selected>Nombre</option>
               <option value="ascending">A-Z</option>
@@ -61,13 +61,16 @@
             </select>
             <label>Ordenar por</label>
           </div>
-          <div class="input-field col s4">
+          <div class="input-field col m3">
             <select id="key">
               <option value="" selected>Fecha de Lanzamiento</option>
               <option value="ascending">Más antiguo</option>
               <option value="descending">Más nuevo</option>
             </select>
             <label>Ordenar por</label>
+          </div>
+          <div id="search" class="input-field col s3 push-s2">
+            <input type="text" id="search-input" placeholder="&#xF002; Buscar..">
           </div>
         </div>  
     </div>
@@ -76,101 +79,7 @@
     <div id="champ-container-mobile" class="container row">
     </div>
     <div id="individual-champs" class="container row">
-      <!-- <div id="champ-name-title" class="col s12 center-align">
-        <p id="champ-name">Aatrox</p>
-        <p id="champ-title">the Darkin Blade</p><br><br>
-      </div>
-      <div class="col s12 m6">
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" alt="Aatrox" class="responsive-img">
-        <p class="center-align">Roles: Fighter - Tank</p>
-      </div>
-      <div class="col s12 m6">
-          <table class="centered">
-              <thead>
-                <tr>
-                    <th>Stat</th>
-                    <th>Base (a lvl 1)</th>
-                    <th>Growth per lvl</th>
-                </tr>
-              </thead>
-      
-              <tbody>
-                <tr>
-                  <td>HP</td>
-                  <td>537.8</td>
-                  <td>85</td>
-                </tr>
-                <tr>
-                  <td>BloodWell</td>
-                  <td>105.6</td>
-                  <td>45</td>
-                </tr>
-                <tr>
-                  <td>Movement Speed</td>
-                  <td>345</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Armor</td>
-                  <td>24.384</td>
-                  <td>3.8</td>
-                </tr>
-                <tr>
-                  <td>Spellblock</td>
-                  <td>32.1</td>
-                  <td>1.25</td>
-                </tr>
-                <tr>
-                  <td>Attack Range</td>
-                  <td>150</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>HP Regen</td>
-                  <td>6.59</td>
-                  <td>0.5</td>
-                </tr>
-                <tr>
-                  <td>MP Regen</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Crit</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Attack Damage</td>
-                  <td>60.376</td>
-                  <td>3.2</td>
-                </tr>
-                <tr>
-                  <td>Attack Speed</td>
-                  <td>-0.04</td>
-                  <td>3</td>
-                </tr>
-              </tbody>
-            </table>                  
-      </div>
-      <div class="col s6 pull-s3" id="compare">
-            <select id="compare-filters" multiple>
-              <option value="" disabled>Todos los Champions</option>
-              <option value="ascending">Assassin</option>
-              <option value="descending">Fighter</option>
-              <option value="ascending">Mage</option>
-              <option value="ascending">Marksman</option>
-              <option value="ascending">Support</option>
-              <option value="ascending">Melee</option>
-              <option value="ascending">Ranged</option>
-            </select>
-            <label>Comparar con promedio de:</label>
-      </div>
-      <div class="col s12" id="compare-chart-container">
-        <canvas id="compare-chart">
-          
-        </canvas>
-      </div> -->
+     
     </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
