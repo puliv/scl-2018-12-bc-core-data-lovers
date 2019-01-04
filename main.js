@@ -150,10 +150,6 @@ document.getElementById("champion-filters").addEventListener("change", () => {
     initializeCharts(window.championManage.filterData(window.championData, filtersActive));
     
 })
-
-
-
-
 function showChampsData () {
     showChamps(window.championData);
     initializeCharts(window.championData);
@@ -203,3 +199,46 @@ window.onload = showChampsData;
 //         }
 //     }
 // });
+
+document.getElementById("flame").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("flame-section").style.display = "block";
+    document.getElementById("filters").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("about-lolapp-section").style.display = "none";
+
+
+});
+
+document.getElementById("about-lolapp").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("about-lolapp-section").style.display = "block";
+    document.getElementById("filters").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("flame-section").style.display = "none";
+
+});
+
+document.getElementById("button1").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("filters").style.display = "block";
+    document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("flame-section").style.display = "none";
+
+});
+
+document.getElementById("button2").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("filters").style.display = "block";
+    document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("flame-section").style.display = "none";
+
+});
