@@ -215,10 +215,7 @@ td, th {
     top: 6vw;
 }
 
-#compare-chart-container {
-    position: relative;
-    top: 10vw;
-}
+
 
 @media only screen and (max-width: 845px) {
     #champions, #flame, #about-lolapp{
@@ -365,4 +362,8 @@ color: #f1e6d0;
 
 #flame-section, #about-lolapp-section{
     display: none;
+}
+
+.champ-sprite {
+    cursor: pointer;
 }

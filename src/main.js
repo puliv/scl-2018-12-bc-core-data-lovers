@@ -48,6 +48,7 @@ fetch('data/lol/lol.json')
     for (let champ in data.data) {
         window.championData.push(data.data[champ]);
         }
+        showChampsData();
     })
 
 
@@ -64,7 +65,7 @@ function showChamps (data) {
     document.getElementById("champ-container-mobile").innerHTML = "";
     data.forEach(champ => {
         document.getElementById("champ-container").innerHTML += `
-        <div class="card col s3 center-align">
+        <div class="card col s3">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img img-champion" src="${champ.splash}">
             </div>
@@ -84,7 +85,7 @@ function showChamps (data) {
         <div class="col s2">
             <div class="card mobile-version">
                 <div class="card-image">
-                    <img src="${champ.img}">
+                    <img src="${champ.img}" class="champ-sprite">
                 </div>
                 <div class="card-content mobile-version">
                 ${champ.name}
@@ -152,7 +153,7 @@ function initializeCharts (data) {
 
 
 // interacción filtros
-document.getElementById("champion-filters").addEventListener("change", userInteract)
+document.getElementById("champion-filters").addEventListener("change", userInteract);
 
 
 
@@ -190,7 +191,8 @@ function userInteract() {
     }
     showChamps(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
     initializeCharts(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
-    champIndividualDiv(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
+    champIndividualDiv(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value), championImages);
+    champIndividualDiv(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value), championSprites);
 
 }
 document.getElementById("name").addEventListener("change", userInteract/*() => {
@@ -249,14 +251,18 @@ document.getElementById("name").addEventListener("change", userInteract/*() => {
 
 
 // función que le asigna a cada imagen una función que genera la página individual del champion
-function champIndividualDiv(data) {
-    let championImages = document.getElementsByClassName("img-champion");
-    for (let i= 0; i<championImages.length; i++) {
-        championImages[i].addEventListener("click", () => {
+let championImages = document.getElementsByClassName("img-champion");
+let championSprites = document.getElementsByClassName("champ-sprite");
+
+function champIndividualDiv(data, img) {
+    for (let i= 0; i<img.length; i++) {
+        img[i].addEventListener("click", () => {
+            window.location.href = "#header";
             document.getElementById("filters").style.display = "none";
-            document.getElementById("sort-options").style.display = "none";
-            document.getElementById("champ-container").style.display = "none";
-            document.getElementById("champ-container-mobile").style.display = "none";
+            document.getElementById("order-and-search").style.display = "none";
+            // document.getElementById("champ-container").style.display = "none";
+            // document.getElementById("champ-container-mobile").style.display = "none";
+            document.getElementById("general-champ-container").style.display = "none";
             document.getElementById("individual-champs").style.display = "block";
             document.getElementById("individual-champs").innerHTML = `            
             <div id="champ-name-title" class="col s12 center-align">
@@ -336,19 +342,23 @@ function champIndividualDiv(data) {
                     </tbody>
                     </table>                  
             </div>
-            <div class="col s6 pull-s3" id="compare">
+            <div class="row">
+            <div class="col s6 offset-s3" id="compare center-align">
+                    <p>Comparar con promedio de:</p>
                     <select id="compare-filters" multiple>
                     <option value="" disabled>Todos los Champions</option>
                     <option value="Assassin">Assassin</option>
                     <option value="Fighter">Fighter</option>
+                    <option value="Tank">Tank</option>
                     <option value="Mage">Mage</option>
                     <option value="Marksman">Marksman</option>
                     <option value="Support">Support</option>
                     <option value="Melee">Melee</option>
                     <option value="Ranged">Ranged</option>
                     </select>
-                    <label>Comparar con promedio de:</label>
+                    
             </div>
+            <div>
             <div class="col s12" id="compare-chart-container">
                 <canvas id="compare-chart">
                 
@@ -364,7 +374,7 @@ function champIndividualDiv(data) {
                 for (let i = 0; i<document.getElementById("compare-filters").selectedOptions.length; i++) {
                     compareFilters.push(document.getElementById("compare-filters").selectedOptions[i].value);
                 }
-                let averageChampion = window.championManage.averageStats(window.championManage.filterData(championData, compareFilters));
+                let averageChampion = window.championManage.averageStats(window.championManage.filterData(window.championData, compareFilters));
                 champChart.data.datasets[1].data = [averageChampion.hp, averageChampion.hpperlevel, averageChampion.mp, averageChampion.mpperlevel, averageChampion.movespeed, averageChampion.armor, averageChampion.armorperlevel, averageChampion.spellblock, averageChampion.spellblockperlevel, averageChampion.attackrange, averageChampion.hpregen, averageChampion.hpregenperlevel, averageChampion.mp, averageChampion.mpregenperlevel, averageChampion.crit, averageChampion.critperlevel, averageChampion.attackdamage, averageChampion.attackdamageperlevel, averageChampion.attackspeedoffset, averageChampion.attackspeedperlevel];
                 champChart.update();
                 
@@ -475,9 +485,12 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
 function showChampsData() {
     showChamps(window.championData);
     initializeCharts(window.championData);
-    champIndividualDiv(window.championData);
+    champIndividualDiv(window.championData, championImages);
+    champIndividualDiv(window.championData, championSprites);
 }
-window.onload = showChampsData;
+// window.onload = showChampsData;
+
+
 // graficos de stats
 
 
@@ -531,6 +544,8 @@ document.getElementById("flame").addEventListener("click", (evento) => {
     // document.getElementById("champ-container").style.display = "none";
     // document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("individual-champs").style.display = "none";
+    window.location.href = "#header";
 
 
 });
@@ -544,28 +559,29 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
     // document.getElementById("champ-container").style.display = "none";
     // document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("flame-section").style.display = "none";
+    document.getElementById("individual-champs").style.display = "none";
+    window.location.href = "#header";
 
 });
 
-document.getElementById("button1").addEventListener("click", (evento) => {
-    evento.preventDefault();
+document.getElementById("button1").addEventListener("click", back);
 
+document.getElementById("button2").addEventListener("click", back);
+
+document.getElementById("champions").addEventListener("click", back)
+
+function back() {
+    let filtersToClear = document.getElementsByClassName("filter");
+    for (let i = 0; i<filtersToClear.length; i++) {
+        filtersToClear[i].checked = false;
+    }
+    userInteract();
+    document.getElementById("individual-champs").style.display = "none";
     document.getElementById("filters").style.display = "block";
+    document.getElementById("order-and-search").style.display = "block";
     document.getElementById("about-lolapp-section").style.display = "none";
     document.getElementById("general-champ-container").style.display = "block";
     document.getElementById("flame-section").style.display = "none";
     window.location.href = "#header";
 
-});
-
-document.getElementById("button2").addEventListener("click", (evento) => {
-    evento.preventDefault();
-
-    document.getElementById("filters").style.display = "block";
-    document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "block";
-    document.getElementById("flame-section").style.display = "none";
-    window.location.href = "#header";
-
-});
-
+}
