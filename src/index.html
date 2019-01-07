@@ -137,24 +137,20 @@
             </label>
           </p>
         </form>  
-        <div id="sort-options" class="container row">
-          <div class="input-field col m3">
+        <div class="container row valign-wrapper">
+          <div class="input-field col m3" id="sort-options">
             <select id="name">
-              <option value="" selected>Nombre</option>
-              <option value="ascending">A-Z</option>
-              <option value="descending">Z-A</option>
+              <option value="" disabled>Nombre</option>
+              <option value="az" selected>A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="" disabled>Fecha de Lanzamiento</option>
+              <option value="oldest">Más antiguo</option>
+              <option value="newest">Más nuevo</option>
             </select>
             <label>Ordenar por</label>
           </div>
-          <div class="input-field col m3">
-            <select id="key">
-              <option value="" selected>Fecha de Lanzamiento</option>
-              <option value="ascending">Más antiguo</option>
-              <option value="descending">Más nuevo</option>
-            </select>
-            <label>Ordenar por</label>
-          </div>
-          <div id="search" class="input-field col s3 push-s2">
+          
+          <div id="search" class="input-field col s3 push-s5">
             <input type="text" id="search-input" placeholder="&#xF002; Buscar..">
           </div>
         </div>  

@@ -40,6 +40,8 @@
 //     .then(() => console.log(championData))
 // })
 
+
+// fetch local porque la data de la api viene distinta
 fetch('data/lol/lol.json')
     .then(data => data.json())
     .then (data => {
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  // funcion que me crea las tarjetidas de cada champ, para version desktop y mobile
 function showChamps (data) {
     document.getElementById("champ-container").innerHTML = "";
     document.getElementById("champ-container-mobile").innerHTML = "";
@@ -94,11 +97,13 @@ function showChamps (data) {
 
 
 
-
+// HTMLCollection con los canvases y array para guardar los gráficos que van al otro lado de las
+// tarjetidas de cada champ
 
 let championGraphsCanvases = document.getElementsByClassName("champion-chart");
 let championCharts = [];
 
+// funcion que iniciliza los gráficos que van en las tarjetas de los champs
 function initializeCharts (data) {
     championCharts = [];
     for (let i = 0; i<championGraphsCanvases.length; i++) {
@@ -145,6 +150,7 @@ function initializeCharts (data) {
     }
 }
 
+<<<<<<< HEAD
 document.getElementById("champion-filters").addEventListener("change", () => {
     let filtersActive = [];
     const filters = document.getElementsByClassName("filter");
@@ -160,10 +166,16 @@ document.getElementById("champion-filters").addEventListener("change", () => {
 })
 HEAD
 function showChampsData () {
+=======
+
+// interacción filtros
+document.getElementById("champion-filters").addEventListener("change", userInteract)
+>>>>>>> 95548b476be50e26fa07ac29f4b10c242151969a
 
 
 
-document.getElementById("name").addEventListener("change", () => {
+// interacción selects de ordenar
+function userInteract() {
     if (document.getElementById("name").value === ""){
         return;
     }
@@ -174,14 +186,33 @@ document.getElementById("name").addEventListener("change", () => {
             filtersActive.push(filters[i].value);
         }
     }
-    showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
-    initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
-    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "name", document.getElementById("name").value));
-    
-})
+    let sortBy;
+    let sortOrder;
+    switch (document.getElementById("name").value) {
+        case "az":
+            sortBy = "name";
+            sortOrder = "ascending";
+            break;
+        case "za":
+            sortBy = "name";
+            sortOrder = "descending";
+            break;
+        case "oldest":
+            sortBy = "key";
+            sortOrder = "ascending";
+            break;
+        case "newest":
+            sortBy = "key";
+            sortOrder = "descending"
+            break;
+    }
+    showChamps(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
+    initializeCharts(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
+    champIndividualDiv(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value));
 
-document.getElementById("key").addEventListener("change", () => {
-    if (document.getElementById("key").value === ""){
+}
+document.getElementById("name").addEventListener("change", userInteract/*() => {
+    if (document.getElementById("name").value === ""){
         return;
     }
     let filtersActive = [];
@@ -191,12 +222,51 @@ document.getElementById("key").addEventListener("change", () => {
             filtersActive.push(filters[i].value);
         }
     }
-    showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
-    initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
-    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
+    let sortBy;
+    let sortOrder;
+    switch (document.getElementById("name").value) {
+        case "az":
+            sortBy = "name";
+            sortOrder = "ascending";
+            break;
+        case "za":
+            sortBy = "name";
+            sortOrder = "descending";
+            break;
+        case "oldest":
+            sortBy = "key";
+            sortOrder = "ascending";
+            break;
+        case "newest":
+            sortBy = "key";
+            sortOrder = "descending"
+            break;
+    }
+    showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
+    initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
+    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
     
-})
+}*/)
 
+// document.getElementById("key").addEventListener("change", () => {
+//     if (document.getElementById("key").value === ""){
+//         return;
+//     }
+//     let filtersActive = [];
+//     const filters = document.getElementsByClassName("filter");
+//     for (let i = 0; i<filters.length; i++) {
+//         if (filters[i].checked === true) {
+//             filtersActive.push(filters[i].value);
+//         }
+//     }
+//     showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
+//     initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
+//     champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
+    
+// })
+
+
+// función que le asigna a cada imagen una función que genera la página individual del champion
 function champIndividualDiv(data) {
     let championImages = document.getElementsByClassName("img-champion");
     for (let i= 0; i<championImages.length; i++) {
@@ -303,7 +373,9 @@ function champIndividualDiv(data) {
                 </canvas>
                        
             `;
+            //inicializa select de esta pagina
             window.M.AutoInit();
+            // función que altera gráfico de comparación en base a los filtros que se apliquen
             let champChart;
             document.getElementById("compare-filters").addEventListener("change", () => {
                 let compareFilters = [];
@@ -315,6 +387,7 @@ function champIndividualDiv(data) {
                 champChart.update();
                 
             })
+            // fiunción que inicializa chart con gráfico comparativo
             function initializeCompare(data) {
                 let averageChampion = window.championManage.averageStats(data);
                 let compareCanvas = document.getElementById("compare-chart").getContext('2d');
@@ -362,9 +435,23 @@ function champIndividualDiv(data) {
 
 }
 
-document.getElementById("champions").addEventListener("click", () => {
-    document.location = "index.html";
-});
+
+// función de la barra de busqueda
+document.getElementById("search-input").addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+        userInteract();
+        /*let filtersActive = [];
+        const filters = document.getElementsByClassName("filter");
+        for (let i = 0; i<filters.length; i++) {
+            if (filters[i].checked === true) {
+                filtersActive.push(filters[i].value);
+            }
+        }
+        showChamps(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
+        initializeCharts(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
+        champIndividualDiv(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));*/
+    }
+})
 
 
 // var ctx = document.getElementById("compare-chart").getContext('2d');
@@ -494,4 +581,8 @@ document.getElementById("button2").addEventListener("click", (evento) => {
     document.getElementById("flame-section").style.display = "none";
 
 });
+<<<<<<< HEAD
 };
+=======
+
+>>>>>>> 95548b476be50e26fa07ac29f4b10c242151969a
