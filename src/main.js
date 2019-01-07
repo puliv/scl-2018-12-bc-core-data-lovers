@@ -158,10 +158,8 @@ document.getElementById("champion-filters").addEventListener("change", () => {
     champIndividualDiv(window.championManage.filterData(window.championData, filtersActive));
     
 })
-<<<<<<< HEAD
+HEAD
 function showChampsData () {
-=======
-
 
 
 
@@ -406,7 +404,6 @@ document.getElementById("champions").addEventListener("click", () => {
 
 
 function showChampsData() {
->>>>>>> a035c2e2e3f8c4cff4444129a94a9b0ae408b694
     showChamps(window.championData);
     initializeCharts(window.championData);
     champIndividualDiv(window.championData);
@@ -456,7 +453,6 @@ window.onload = showChampsData;
 //     }
 // });
 
-<<<<<<< HEAD
 document.getElementById("flame").addEventListener("click", (evento) => {
     evento.preventDefault();
 
@@ -465,7 +461,6 @@ document.getElementById("flame").addEventListener("click", (evento) => {
     document.getElementById("champ-container").style.display = "none";
     document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("about-lolapp-section").style.display = "none";
-
 
 });
 
@@ -499,6 +494,4 @@ document.getElementById("button2").addEventListener("click", (evento) => {
     document.getElementById("flame-section").style.display = "none";
 
 });
-=======
-
->>>>>>> a035c2e2e3f8c4cff4444129a94a9b0ae408b694
+};
