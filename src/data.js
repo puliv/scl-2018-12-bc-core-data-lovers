@@ -94,6 +94,13 @@ window.championManage = {
     })
     return averageChampion;
 
+  },
+  searchChamp: (data, searching) => {
+    let foundData = data;
+    foundData = foundData.filter(champ => {
+      return (champ.name.toLowerCase().indexOf(searching.toLowerCase()) !== -1);
+    })
+    return foundData;
   }
 }
 //ESTO ERA PARA VER LOS RANGOS DE LOS CHAMPIONS
