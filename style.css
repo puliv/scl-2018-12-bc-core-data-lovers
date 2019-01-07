@@ -135,12 +135,13 @@ div#filters.container.row.center-align {
     margin: 0;
 }
 
-#name-order, #release-order {
-    /* float: right; */
-    color: #c9aa71;
-    background-color: #0A0A0C;
-    border: 1px solid #F1E6D0;
+#sort-options {
+    margin-left: 23px;
 }
+
+/* #search {
+    margin: auto;
+} */
 
 div#champ-container.container.row {
     position: relative;
