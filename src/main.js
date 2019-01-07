@@ -152,18 +152,7 @@ function initializeCharts (data) {
 
 
 // interacción filtros
-document.getElementById("champion-filters").addEventListener("change", userInteract/*() => {
-    let filtersActive = [];
-    const filters = document.getElementsByClassName("filter");
-    for (let i = 0; i<filters.length; i++) {
-        if (filters[i].checked === true) {
-            filtersActive.push(filters[i].value);
-        }
-    }
-    showChamps(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
-    initializeCharts(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
-    champIndividualDiv(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
-}*/)
+document.getElementById("champion-filters").addEventListener("change", userInteract)
 
 
 
@@ -533,4 +522,46 @@ window.onload = showChampsData;
 //     }
 // });
 
+document.getElementById("flame").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("flame-section").style.display = "block";
+    document.getElementById("filters").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("about-lolapp-section").style.display = "none";
+
+
+});
+
+document.getElementById("about-lolapp").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("about-lolapp-section").style.display = "block";
+    document.getElementById("filters").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("flame-section").style.display = "none";
+
+});
+
+document.getElementById("button1").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("filters").style.display = "block";
+    document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("flame-section").style.display = "none";
+
+});
+
+document.getElementById("button2").addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    document.getElementById("filters").style.display = "block";
+    document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("flame-section").style.display = "none";
+
+});
 
