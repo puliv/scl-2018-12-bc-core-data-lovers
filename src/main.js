@@ -64,7 +64,7 @@ function showChamps (data) {
     document.getElementById("champ-container-mobile").innerHTML = "";
     data.forEach(champ => {
         document.getElementById("champ-container").innerHTML += `
-        <div class="card col s3">
+        <div class="card col s3 center-align">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img img-champion" src="${champ.splash}">
             </div>
@@ -545,8 +545,9 @@ document.getElementById("flame").addEventListener("click", (evento) => {
 
     document.getElementById("flame-section").style.display = "block";
     document.getElementById("filters").style.display = "none";
-    document.getElementById("champ-container").style.display = "none";
-    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("general-champ-container").style.display = "none"
+    // document.getElementById("champ-container").style.display = "none";
+    // document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("about-lolapp-section").style.display = "none";
 
 });
@@ -556,8 +557,9 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
 
     document.getElementById("about-lolapp-section").style.display = "block";
     document.getElementById("filters").style.display = "none";
-    document.getElementById("champ-container").style.display = "none";
-    document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("general-champ-container").style.display = "none"
+    // document.getElementById("champ-container").style.display = "none";
+    // document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("flame-section").style.display = "none";
 
 });
@@ -567,8 +569,9 @@ document.getElementById("button1").addEventListener("click", (evento) => {
 
     document.getElementById("filters").style.display = "block";
     document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("general-champ-container").style.display = "block";
     document.getElementById("flame-section").style.display = "none";
+    window.location.href = "#header";
 
 });
 
@@ -577,8 +580,9 @@ document.getElementById("button2").addEventListener("click", (evento) => {
 
     document.getElementById("filters").style.display = "block";
     document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("champ-container").style.display = "block";
+    document.getElementById("general-champ-container").style.display = "block";
     document.getElementById("flame-section").style.display = "none";
+    window.location.href = "#header";
 
 });
 <<<<<<< HEAD
