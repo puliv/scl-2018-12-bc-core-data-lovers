@@ -12,7 +12,7 @@
     <link rel="icon" href="Img/iconoLoL.png">
   </head>
   <body>
-    <header>
+    <header id="header">
       <img id="img-header" class="responsive-img" src="Img\img-header.png" alt="Fondo Runaterra">
       <div id="nav-buttons" class="center-align">
         <button id="about-lolapp">Sobre LOLApp</button>
@@ -87,7 +87,7 @@
               puedes leer el <a href=(https://euw.leagueoflegends.com/es/game-info/get-started/summoners-code/ id="codigoInvocador">Código del Invocador </a> y los 
               <a href=https://euw.leagueoflegends.com/es/legal/termsofuse#section2 id="terminosUso">Términos de Uso.</a></strong></p></div>
           </div>           
-          <div class="col s12 center-align"><a class="waves-effect waves-light btn" id="button2">Volver al Inicio</a></div>
+          <div class="col s12 center-align"><a href="#header" class="waves-effect waves-light btn" id="button2">Volver al Inicio</a></div>
            </div>
         </div>
         </div>
@@ -155,12 +155,13 @@
           </div>
         </div>  
     </div>
-    <div id="champ-container" class="container row">       
-    </div>
-    <div id="champ-container-mobile" class="container row">
-    </div>
-    <div id="individual-champs" class="container row">
-     
+    <div id="general-champ-container">
+      <div id="champ-container" class="container row center-align">       
+      </div>
+      <div id="champ-container-mobile" class="container row">
+      </div>
+      <div id="individual-champs" class="container row">  
+      </div>
     </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
