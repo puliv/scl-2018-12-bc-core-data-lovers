@@ -134,14 +134,20 @@ div#filters.container.row.center-align {
     margin: 0;
 }
 
-<<<<<<< HEAD
-=======
+
 #name-order, #release-order {
     /* float: right; */
     color: #c9aa71;
     background-color: #0A0A0C;
     border: 1px solid #F1E6D0;
+#sort-options {
+    margin-left: 23px;
+
 }
+
+/* #search {
+    margin: auto;
+} */
 
 div#champ-container.container.row {
     position: relative;
@@ -158,7 +164,6 @@ input.select-dropdown.dropdown-trigger {
     border-bottom: 1px solid #F1E6D0;
 }
 
->>>>>>> a035c2e2e3f8c4cff4444129a94a9b0ae408b694
 /* #champions {
     position: relative;
     float: right;
