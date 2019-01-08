@@ -560,22 +560,6 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
     evento.preventDefault();
 
     document.getElementById("about-lolapp-section").style.display = "block";
-<<<<<<< HEAD
-    document.getElementById("filters").style.display = "none";
-    document.getElementById("champ-container").style.display = "none";
-    document.getElementById("champ-container-mobile").style.display = "none";
-    document.getElementById("flame-section").style.display = "none";
-
-});
-
-document.getElementById("button1").addEventListener("click", (evento) => {
-    evento.preventDefault();
-
-    document.getElementById("filters").style.display = "block";
-    document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("champ-container").style.display = "block";
-    document.getElementById("flame-section").style.display = "none";
-=======
     // document.getElementById("filters").style.display = "none";
     document.getElementById("root").style.display = "none";
     // document.getElementById("general-champ-container").style.display = "none";
@@ -586,20 +570,11 @@ document.getElementById("button1").addEventListener("click", (evento) => {
 });
 
 document.getElementById("button1").addEventListener("click", back);
->>>>>>> 6f3f9d32ff085adc24e28ce62939503253483b0b
 
 document.getElementById("button2").addEventListener("click", back);
 
 document.getElementById("champions").addEventListener("click", back)
 
-<<<<<<< HEAD
-    document.getElementById("filters").style.display = "block";
-    document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("champ-container").style.display = "block";
-    document.getElementById("flame-section").style.display = "none";
-
-});
-=======
 function back() {
     setTimeout(() => {
         document.getElementById("individual-champs").style.display = "none";
@@ -629,4 +604,3 @@ window.addEventListener("load", () => {
     document.getElementById("preloader").style.display = "none";
     document.getElementById("root").className = "";
 })
->>>>>>> 6f3f9d32ff085adc24e28ce62939503253483b0b
