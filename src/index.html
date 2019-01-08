@@ -92,74 +92,89 @@
         </div>
         </div>
   </section>
-    <div id="filters" class="container row center-align">
-      <form action="#" id="champion-filters">
-          <p>
-            <label>
-              <input id="assassin" type="checkbox" value="Assassin" class="filter"/>
-              <span>Assassin</span>
-            </label>
-            <label>
-              <input id="fighter" type="checkbox" value="Fighter" class="filter"/>
-              <span>Fighter</span>
-            </label>
-            <label>
-              <input id="tank" type="checkbox" value="Tank" class="filter"/>
-              <span>Tank</span>
-            </label>
-            <label>
-              <input id="mage" type="checkbox" value="Mage" class="filter"/>
-              <span>Mage</span>
-            </label>
-            <label>
-              <input id="marksman" type="checkbox" value="Marksman" class="filter"/>
-              <span>Marksman</span>
-            </label>
-            <label>
-              <input id="support" type="checkbox" value="Support" class="filter"/>
-              <span>Support</span>
+  <div class="col s12 center" id="preloader">
+      <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div id="root" class="hide">
+      <div id="filters" class="container row center-align">
+        <form action="#" id="champion-filters">
+            <p>
+              <label>
+                <input id="assassin" type="checkbox" value="Assassin" class="filter"/>
+                <span>Assassin</span>
               </label>
-            <label>
-              <input id="melee" type="checkbox" value="Melee" class="filter"/>
-              <span>Melee</span>
-            </label>
-            <label>
-              <input id="ranged" type="checkbox" value="Ranged" class="filter"/>
-              <span>Ranged</span>
-            </label>
-          </p>
-        </form>  
-        <div id="order-and-search" class="container row valign-wrapper">
-          <div class="input-field col m3" id="sort-options">
-            <select id="name">
-              <option value="" disabled>Nombre</option>
-              <option value="az" selected>A-Z</option>
-              <option value="za">Z-A</option>
-              <option value="" disabled>Fecha de Lanzamiento</option>
-              <option value="oldest">Más antiguo</option>
-              <option value="newest">Más nuevo</option>
-            </select>
-            <label>Ordenar por</label>
-          </div>
-          
-          <div id="search" class="input-field col s3 push-s5">
-            <input type="text" id="search-input" placeholder="&#xF002; Buscar..">
-          </div>
-        </div>  
+              <label>
+                <input id="fighter" type="checkbox" value="Fighter" class="filter"/>
+                <span>Fighter</span>
+              </label>
+              <label>
+                <input id="tank" type="checkbox" value="Tank" class="filter"/>
+                <span>Tank</span>
+              </label>
+              <label>
+                <input id="mage" type="checkbox" value="Mage" class="filter"/>
+                <span>Mage</span>
+              </label>
+              <label>
+                <input id="marksman" type="checkbox" value="Marksman" class="filter"/>
+                <span>Marksman</span>
+              </label>
+              <label>
+                <input id="support" type="checkbox" value="Support" class="filter"/>
+                <span>Support</span>
+                </label>
+              <label>
+                <input id="melee" type="checkbox" value="Melee" class="filter"/>
+                <span>Melee</span>
+              </label>
+              <label>
+                <input id="ranged" type="checkbox" value="Ranged" class="filter"/>
+                <span>Ranged</span>
+              </label>
+            </p>
+          </form>  
+          <div id="order-and-search" class="container row valign-wrapper">
+            <div class="input-field col m3" id="sort-options">
+              <select id="name">
+                <option value="" disabled>Nombre</option>
+                <option value="az" selected>A-Z</option>
+                <option value="za">Z-A</option>
+                <option value="" disabled>Fecha de Lanzamiento</option>
+                <option value="oldest">Más antiguo</option>
+                <option value="newest">Más nuevo</option>
+              </select>
+              <label>Ordenar por</label>
+            </div>
+            
+            <div id="search" class="input-field col s3 offset-s6">
+              <input type="text" id="search-input" placeholder="&#xF002; Buscar..">
+            </div>
+          </div>  
+      </div>
+      <div id="general-champ-container">
+        <div id="champ-container" class="container row center-align">       
+        </div>
+        <div id="champ-container-mobile" class="container row">
+        </div>
+      </div>
+        <div id="individual-champs" class="container row">  
+        </div>
     </div>
-    <div id="general-champ-container">
-      <div id="champ-container" class="container row">       
-      </div>
-      <div id="champ-container-mobile" class="container row">
-      </div>
-    </div>
-      <div id="individual-champs" class="container row">  
-      </div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <!-- <script src="./data/steam/steam.js"></script> -->
     <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+    <script src="./data/lol/lol.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
