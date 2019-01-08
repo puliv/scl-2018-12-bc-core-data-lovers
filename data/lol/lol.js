@@ -6978,5 +6978,6 @@ let championsTest = () => {
     champArray.push(LOL.data[champion]);
   }
   return champArray;
- }
- window.championsTest = championsTest;
+}
+window.championsTest = championsTest;
+

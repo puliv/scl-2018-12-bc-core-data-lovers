@@ -57,9 +57,10 @@ body {
     font-family: FontAwesome, Arial;
 }
 
-/* #champions:hover {
-    background: url(Img/hover-effect.png) 50% -3px no-repeat transparent;
-} */
+div.card.col.s3 {
+    text-align: left;
+}
+
 
 .card {
     margin: 1vw 3.2vw;
@@ -67,10 +68,12 @@ body {
     border-radius: 10px;
     background: #0A0A0C;
     color: #F1E6D0;
+    margin-right: 4.15%;
+    margin-left: 4.15%;
 }
 
 .row .col.s3 {
-    margin-left: 2.5vw;
+    margin-left: 4.15%;
 }
 
 .card .card-reveal {
@@ -124,7 +127,7 @@ div.card-content.mobile-version {
 }
 
 div.card.mobile-version {
-    min-height: 80px;
+    /* min-height: 80px; */
     min-width: 50px;
     word-wrap: break-word;
     text-align: center;
@@ -147,9 +150,9 @@ div#filters.container.row.center-align {
 
 }
 
-/* #search {
-    margin: auto;
-} */
+#search {
+    margin-left: auto;
+}
 
 div#champ-container.container.row {
     position: relative;
@@ -218,10 +221,7 @@ td, th {
     top: 6vw;
 }
 
-#compare-chart-container {
-    position: relative;
-    top: 10vw;
-}
+
 
 @media only screen and (max-width: 845px) {
     #champions, #flame, #about-lolapp{
@@ -267,6 +267,9 @@ td, th {
     }
     html {
         width: 100vw;
+    }
+    .row .col.s3 {
+        margin-left: auto;
     }
 }
 
@@ -369,4 +372,8 @@ color: #f1e6d0;
 
 #flame-section, #about-lolapp-section{
     display: none;
+}
+
+.champ-sprite {
+    cursor: pointer;
 }
