@@ -42,13 +42,13 @@
 
 
 // fetch local porque la data de la api viene distinta
-fetch('data/lol/lol.json')
-    .then(data => data.json())
-    .then (data => {
-    for (let champ in data.data) {
-        window.championData.push(data.data[champ]);
-        }
-    })
+// fetch('data/lol/lol.json')
+//     .then(data => data.json())
+//     .then (data => {
+//     for (let champ in data.data) {
+//         window.championData.push(data.data[champ]);
+//         }
+//     })
 
 
 // inicializador del select materialize
@@ -64,7 +64,7 @@ function showChamps (data) {
     document.getElementById("champ-container-mobile").innerHTML = "";
     data.forEach(champ => {
         document.getElementById("champ-container").innerHTML += `
-        <div class="card col s3 center-align">
+        <div class="card col s3">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img img-champion" src="${champ.splash}">
             </div>
@@ -150,27 +150,9 @@ function initializeCharts (data) {
     }
 }
 
-<<<<<<< HEAD
-document.getElementById("champion-filters").addEventListener("change", () => {
-    let filtersActive = [];
-    const filters = document.getElementsByClassName("filter");
-    for (let i = 0; i<filters.length; i++) {
-        if (filters[i].checked === true) {
-            filtersActive.push(filters[i].value);
-        }
-    }
-    showChamps(window.championManage.filterData(window.championData, filtersActive));
-    initializeCharts(window.championManage.filterData(window.championData, filtersActive));
-    champIndividualDiv(window.championManage.filterData(window.championData, filtersActive));
     
-})
-HEAD
-function showChampsData () {
-=======
-
 // interacción filtros
 document.getElementById("champion-filters").addEventListener("change", userInteract)
->>>>>>> 95548b476be50e26fa07ac29f4b10c242151969a
 
 
 
@@ -382,7 +364,7 @@ function champIndividualDiv(data) {
                 for (let i = 0; i<document.getElementById("compare-filters").selectedOptions.length; i++) {
                     compareFilters.push(document.getElementById("compare-filters").selectedOptions[i].value);
                 }
-                let averageChampion = window.championManage.averageStats(window.championManage.filterData(championData, compareFilters));
+                let averageChampion = window.championManage.averageStats(window.championManage.filterData(window.championData, compareFilters));
                 champChart.data.datasets[1].data = [averageChampion.hp, averageChampion.hpperlevel, averageChampion.mp, averageChampion.mpperlevel, averageChampion.movespeed, averageChampion.armor, averageChampion.armorperlevel, averageChampion.spellblock, averageChampion.spellblockperlevel, averageChampion.attackrange, averageChampion.hpregen, averageChampion.hpregenperlevel, averageChampion.mp, averageChampion.mpregenperlevel, averageChampion.crit, averageChampion.critperlevel, averageChampion.attackdamage, averageChampion.attackdamageperlevel, averageChampion.attackspeedoffset, averageChampion.attackspeedperlevel];
                 champChart.update();
                 
@@ -488,15 +470,23 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
 //         }
 //     }
 // });
-
+fetch('data/lol/lol.json')
+    .then(data => data.json())
+    .then (data => {
+    for (let champ in data.data) {
+        window.championData.push(data.data[champ]);
+        }
+        showChampsData()
+    })
 
 function showChampsData() {
+    
     showChamps(window.championData);
     initializeCharts(window.championData);
     champIndividualDiv(window.championData);
 }
 window.onload = showChampsData;
-// graficos de stats
+// // graficos de stats
 
 
 // var ctx = document.getElementById("myChart");
@@ -545,9 +535,8 @@ document.getElementById("flame").addEventListener("click", (evento) => {
 
     document.getElementById("flame-section").style.display = "block";
     document.getElementById("filters").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "none"
-    // document.getElementById("champ-container").style.display = "none";
-    // document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("about-lolapp-section").style.display = "none";
 
 });
@@ -557,9 +546,8 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
 
     document.getElementById("about-lolapp-section").style.display = "block";
     document.getElementById("filters").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "none"
-    // document.getElementById("champ-container").style.display = "none";
-    // document.getElementById("champ-container-mobile").style.display = "none";
+    document.getElementById("champ-container").style.display = "none";
+    document.getElementById("champ-container-mobile").style.display = "none";
     document.getElementById("flame-section").style.display = "none";
 
 });
@@ -569,9 +557,8 @@ document.getElementById("button1").addEventListener("click", (evento) => {
 
     document.getElementById("filters").style.display = "block";
     document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "block";
+    document.getElementById("champ-container").style.display = "block";
     document.getElementById("flame-section").style.display = "none";
-    window.location.href = "#header";
 
 });
 
@@ -580,13 +567,7 @@ document.getElementById("button2").addEventListener("click", (evento) => {
 
     document.getElementById("filters").style.display = "block";
     document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "block";
+    document.getElementById("champ-container").style.display = "block";
     document.getElementById("flame-section").style.display = "none";
-    window.location.href = "#header";
 
 });
-<<<<<<< HEAD
-};
-=======
-
->>>>>>> 95548b476be50e26fa07ac29f4b10c242151969a
