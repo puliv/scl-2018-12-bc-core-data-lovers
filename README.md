@@ -48,21 +48,26 @@ Luego de cerrada la encuesta nos dispusimos a analizar los datos recolectados. P
 
 Esto generó un cambio de paradigma en como enfrentabamos el proyecto, debido a que no queríamos crear un proyecto que fuera para una simple mayoría sino **una aplicación que permitiera a las mujeres integrarse en un ambito dominado por hombres de manera más sencilla**. 
 
-En cuanto a las preguntas sobre la información que a los jugadores les parecía más importante, esta seguía siendo relevante ya que la mayoría de las persnas que respondieron la encuesta llevaban jugando al menos 4 años, lo cual nos permite concluír que tienen un grado de conocimiento del juego que les permite determinar que información es más relevante que otra desde la perspectiva de los jugadores.
+En cuanto a las preguntas sobre la información que a los jugadores les parecía más importante, esta seguía siendo relevante ya que la mayoría de las personas que respondieron la encuesta llevaban jugando al menos 4 años, lo cual nos permite concluír que tienen un grado de conocimiento del juego que les permite determinar que información es más relevante que otra desde la perspectiva de los jugadores.
 
 ![Pie chart razones para usar la app](ImgStats/ChartRazonesDeUso.png)
+
 La opción más votada fué "Para comparar estadísticas entre champions". Esto nos da una guía en cuanto a la información agregada que puede mostrar nuestra aplicación, una comparación entre champions que el usuario elija.
 
 ![Chart info que les gustaría ver](ImgStats/ChartInfo.png)
+
 En cuanto a la información que a los usuarios les gustaría ver en nuestra aplicación gano la opción "Builds, Champions que son counter, Champions más jugados", sin embargo *no es posible mostrar esta información por el momento debido a que no se encuentra en nuestra base de datos*. Sin perjuicio de lo anterior, esta opción se incluyó en la encuesta ya de todas formas puede orientar mejoras futuras que satisfagan las necesidades de los usarios.
 
 ![Chart info más importante](ImgStats/ChartInfoImportante.png)
+
 Al igual que en la pregunta anterior, la información más relevante para los usuarios no es posible proveerselas actualmente. La segunda opción más votada si se encuentra en nuestra base de datos y pensamos por esto darle prioridad al momento de desplegar la información.
 
 ![Chart info menos importante](ImgStats/ChartInfoMenosImportante.png)
+
 En cuanto a la información menos importante no encontramos un consenso entre quienes respondieron la encuesta.
 
 ![Chart cuando usarían la aplicación](ImgStats/ChartCuandoUsarianApp.png)
+
 La mayoría de los usuarios usaría la aplicación antes de una partida, lo cual nos permite mostrar más información, ya que quienes accedan a la app tendrán más tiempo disponible para ver sus datos (al contrario de lo que ocurriría si la mayoría pensara en usar la app durante una partida, necesitarían solo info contingente y muy puntual).
 
 ![Chart soluciones a la discriminación](ImgStats/ChartSolucionDiscriminacion.png)
@@ -77,9 +82,9 @@ En base a la información recolectada diseñamos un primer flujo:
 
 Luego de dos procesos de iteración decidimos cambiar algunas ideas iniciales que teniamos:
 
-- Decidimos cambiar los botones "A", "B" y "C" por un Menú de Navegación que se ubicará bajo el logo de la App y que se mantendrá visible en todo momento. Este menú de navegación permitirá acceder rapidamente a todas las secciones de la app, estas serán las siguientes: 
-    - Inicio: permitirá volver a la página inicial.
-    - Orden: permitirá ordenar los champions alfabéticamente o por el orden en que fueron introducidos al juego. Todo esto en la misma página.
+- Decidimos cambiar los botones "A", "B" y "C" por un Menú de Navegación que se ubicará bajo el logo de la App y se mantendrá visible solo en la parte superior del sitio. Este menú de navegación permitirá acceder rapidamente a las secciones de la app: 
+    - Inicio: se podrán visualizar a todos los champions.
+    - Orden: permitirá ordenar los champions alfabéticamente por el orden en que fueron introducidos al juego. Todo esto en la misma página.
     - Filtros: permitirá filtrar los champions por su tipo (fighter, tank, mage, assassin, support), por la letra de su nombre, por stat secundario (MP, energy, rage). Todo esto en la misma página.
     - Comparación entre Champions: permitirá desplegar una comparación entre 2 champions que mostrará un gráfico con la variación de stats por nivel, en base a esto será posible determinar cuál de los 2 champions es mas fuerte en early game, mid game y late game.
     - Sección de sanciones y denuncias: llevará al usuario a una sección que lo informe sobre las conductas que estan penadas en LoL y la forma para reportarlas, asi como también las acciones que se pueden tomar para lidiar con una persona que recurra a insultos y discriminación dentro del juego.
@@ -116,7 +121,7 @@ Para hacer la previa caracterización de las fases del juego revisamos diversas 
 - [Discusión en Reddit](https://www.reddit.com/r/leagueoflegends/comments/8u96ip/when_is_early_game_mid_game_and_late_game/)
 - [Artículo en Mobafire](https://www.mobafire.com/league-of-legends/build/advanced-game-phase-breakdown-223875)
 - [Discusión en el foro de LoL del server de NA](http://forums.na.leagueoflegends.com/board/showthread.php?t=642319)
-
+ 
 ##### CALCULO COMPARATIVO
 
 Para efectos de nuestro calculo comparativo delimitamos los rangos de nivel que corresponden a cada etapa del juego de la siguiente manera:
@@ -130,7 +135,15 @@ En base a la data que disponemos para trabajar en nuestra aplicación es posible
 Para que la información mostrada al usuario sea aún más relevante pretendemos cruzar esta información a los nieveles promedio de las 3 etapas de juego (early - mid - late) para que así el usuario pueda ver que champion es mejor en early, mid o late game y así elegir de acuerdo a su estrategia de juego o preferencia.
 
 
-#### TESTEO PROTOTIPO DE BAJA FIDELIDAD
+#### PROTOTIPO DE BAJA FIDELIDAD
+
+Según las respuestas del formulario, los usuarios que ocuparían la aplicación lo harían antes de una partida, por lo tanto, pensamos en un diseño amigable y funcional para que se concentren completamente en el contenido. Esto nos permitió desarrollar una trama más amplia ya que el usuario dispondrá de más tiempo para interactuar con la aplicación.
+
+En la parte superior izquierda de la interfaz de Inicio se ve el logo de la App, al costado derecho está el encabezado de la página, abajo en el menú se visualizan las opciones de manejo de los champions (Filtrar, Ordenar y Estadísticas individuales de los Champions), el contenido sobre la App, y la sección de flame. Y la parte inferior se pueden ver los champions con sus características generales.
+
+![Image-Inicio](src/images/prototipo-baja-fidelidad/INICIO.png)
+
+
 
 ### SEGUNDA SEMANA/SPRINT
 
