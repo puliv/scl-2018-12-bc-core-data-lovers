@@ -6971,3 +6971,13 @@ const LOL = {
     }
   }
 };
+
+let championsTest = () => {
+  let champArray = [];
+  for (let champion in LOL.data) {
+    champArray.push(LOL.data[champion]);
+  }
+  return champArray;
+}
+window.championsTest = championsTest;
+

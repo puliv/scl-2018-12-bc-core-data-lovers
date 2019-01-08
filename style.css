@@ -57,16 +57,22 @@ body {
     font-family: FontAwesome, Arial;
 }
 
+div.card.col.s3 {
+    text-align: left;
+}
+
 
 .card {
     border: 1px solid #F1E6D0;
     border-radius: 10px;
     background: #0A0A0C;
     color: #F1E6D0;
+    margin-right: 4.15%;
+    margin-left: 4.15%;
 }
 
 .row .col.s3 {
-    margin-left: 2.5vw;
+    margin-left: 4.15%;
 }
 
 .card .card-reveal {
@@ -120,7 +126,7 @@ div.card-content.mobile-version {
 }
 
 div.card.mobile-version {
-    min-height: 80px;
+    /* min-height: 80px; */
     min-width: 50px;
     word-wrap: break-word;
     text-align: center;
@@ -143,9 +149,9 @@ div#filters.container.row.center-align {
 
 }
 
-/* #search {
-    margin: auto;
-} */
+#search {
+    margin-left: auto;
+}
 
 div#champ-container.container.row {
     position: relative;
@@ -260,6 +266,9 @@ td, th {
     }
     html {
         width: 100vw;
+    }
+    .row .col.s3 {
+        margin-left: auto;
     }
 }
 

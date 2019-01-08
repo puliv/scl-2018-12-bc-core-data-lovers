@@ -82,7 +82,7 @@ function showChamps (data) {
     })
     data.forEach(champ => {
         document.getElementById("champ-container-mobile").innerHTML += `
-        <div class="col s2">
+        <div class="col s3 m2">
             <div class="card mobile-version">
                 <div class="card-image">
                     <img src="${champ.img}" class="champ-sprite">
@@ -539,12 +539,11 @@ document.getElementById("flame").addEventListener("click", (evento) => {
     evento.preventDefault();
 
     document.getElementById("flame-section").style.display = "block";
-    document.getElementById("filters").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "none"
-    // document.getElementById("champ-container").style.display = "none";
-    // document.getElementById("champ-container-mobile").style.display = "none";
-    document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("individual-champs").style.display = "none";
+    // document.getElementById("filters").style.display = "none";
+    document.getElementById("root").style.display = "none";
+    // document.getElementById("general-champ-container").style.display = "none";
+    // document.getElementById("about-lolapp-section").style.display = "none";
+    // document.getElementById("individual-champs").style.display = "none";
     window.location.href = "#header";
 
 
@@ -554,12 +553,11 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
     evento.preventDefault();
 
     document.getElementById("about-lolapp-section").style.display = "block";
-    document.getElementById("filters").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "none"
-    // document.getElementById("champ-container").style.display = "none";
-    // document.getElementById("champ-container-mobile").style.display = "none";
-    document.getElementById("flame-section").style.display = "none";
-    document.getElementById("individual-champs").style.display = "none";
+    // document.getElementById("filters").style.display = "none";
+    document.getElementById("root").style.display = "none";
+    // document.getElementById("general-champ-container").style.display = "none";
+    // document.getElementById("flame-section").style.display = "none";
+    // document.getElementById("individual-champs").style.display = "none";
     window.location.href = "#header";
 
 });
@@ -571,17 +569,31 @@ document.getElementById("button2").addEventListener("click", back);
 document.getElementById("champions").addEventListener("click", back)
 
 function back() {
-    let filtersToClear = document.getElementsByClassName("filter");
-    for (let i = 0; i<filtersToClear.length; i++) {
-        filtersToClear[i].checked = false;
-    }
-    userInteract();
-    document.getElementById("individual-champs").style.display = "none";
-    document.getElementById("filters").style.display = "block";
-    document.getElementById("order-and-search").style.display = "block";
-    document.getElementById("about-lolapp-section").style.display = "none";
-    document.getElementById("general-champ-container").style.display = "block";
-    document.getElementById("flame-section").style.display = "none";
-    window.location.href = "#header";
+    setTimeout(() => {
+        document.getElementById("individual-champs").style.display = "none";
+        document.getElementById("about-lolapp-section").style.display = "none";
+        document.getElementById("flame-section").style.display = "none";
+        document.getElementById("root").style.display = "none";
+        document.getElementById("preloader").style.display = "block";
+        let filtersToClear = document.getElementsByClassName("filter");
+        for (let i = 0; i<filtersToClear.length; i++) {
+            filtersToClear[i].checked = false;
+        }
 
+    }, 0)
+    setTimeout(userInteract, 200);
+    setTimeout(() => {
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("root").style.display = "block";
+        document.getElementById("filters").style.display = "block";
+        document.getElementById("order-and-search").style.display = "flex";
+        document.getElementById("general-champ-container").style.display = "block";
+        window.location.href = "#header";
+
+    }, 300)
 }
+
+window.addEventListener("load", () => {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("root").className = "";
+})
