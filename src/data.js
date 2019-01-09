@@ -39,7 +39,7 @@ window.championManage = {
     let filteredData = data;
     condition.forEach( element => {
       if (letterFilter.indexOf(element) !== -1){
-        filteredData = filteredData.filter(champ => {
+        filteredData= filteredData.filter(champ => {
           return champ.name[0] === element;
         });
       }else if (typeFilter.indexOf(element) !== -1) {
