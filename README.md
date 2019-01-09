@@ -1,6 +1,6 @@
 # DISEÑO DEL PRODUCTO
 ## FASE DE PLANIFICACIÓN
-### PRIMERA SEMANA/SPRINT.
+
 La primera labor que se realizó fue determinar qué tareas realizaríamos en nuestra primera semana/sprint de trabajo, se optó por **dedicar el primer sprint integramente a tareas de UX** que nos permitieran enfocar en el usuario nuestra página y que nos servirian de guía a todo el proceso creativo de la aplicación, las tareas que determinamos en este primer sprint fueron las siguientes:
 - Elaborar una encuesta a través de un formulario de Google que nos ayude a determinar el usuario al que estaría enfocada nuestra aplicación.
 - Análisis de la data recibida a través de la encuesta.
@@ -74,7 +74,7 @@ La mayoría de los usuarios usaría la aplicación antes de una partida, lo cual
 
 Respecto de las soluciones que los encuestados proponen contra la discriminación, la mayoría coincide que un posible solución sería endurecer las sanciones, si bien esto es algo que escapa de las posibilidades de nuestra aplicación si sería posible agregar una sección que informe a los usuarios del sistema de castigos que tiene Riot(empresa creadora de League of Legends) y quizas aconsejarles sobre algunas practicas que podrían hacer su experiencia mas agradable (como la posibilidad de "mutear" a los demas jugadores si estos estan tomando conductas discriminatorias y anticompetitivas, esto va en la linea de una de las propuestas "Quitar la capacidad de comunicarse", solo que es posible aplicarlo de lado del jugador, sin necesidad de intervención de Riot).
 
-#### PRIMER FLUJO
+#### FLUJO
 
 En base a la información recolectada diseñamos un primer flujo:
 
@@ -104,36 +104,11 @@ Al momento de definir las características de este cálculo nos basamos en la en
 
 Para los usuarios, uno de los contenidos más relevantes es la posibilidad de comparar a los champions en sus diferentes dimensiones, en miras a ayudar al usuario en esta tarea decidimos que nuestro cálculo agregado iria en la linea de mostrar al usuario una *comparación de los stats de los champions*.
 
-Para dar al usuario la mayor cantidad de información útil posible decidimos que no bastaba con una simple comparación, sino que además era necesario que se mostrara al usuario una *conclusión* con ella. El desarrollo de esta conclusión se explica a continuación.
+Para dar al usuario la mayor cantidad de información útil posible decidimos que se le mostraría en un grafico las estadísticas del champion que estuviera revisando y en el mismo grafico, a modo de comparación, se mostraran las estadísticas promediadadas de todos los champions, o de los champions que el usuario elija.
 
-##### ETAPAS DEL JUEGO
+##### CHAMPION PROMEDIO
 
-En nuestras investigaciones sobre la mecánica del juego descubrimos que este es un juego de estratégia y trabajo en equipo que se divide en 3 etapas que simbólicamente representan objetivos dentro del juego, si bien no hay concenso sobre las delimitación clara de cada una de ellas, si es posible definirlas de forma aproximada de la siguiente manera:
-
-**Early Game:** cada usuario se dirige a la linea del juego que le corresponde, el principal objetivo de esta fase es juntar la mayor cantidad de oro posible y obtener algun tipo de ventaja comparativa en la linea (ej: matar al champion enemigo). Tradicionalmente esta fase dura hasta que se destruye la primera torre del juego, lo cual inicia una fase de rotación de los jugadores en el mapa. En esta primera fase los jugadores suelen conseguir su primer item importante del juego. El tiempo en que esto ocurre puede variar entre 6-12 minutos, o excepcionalmente más. Los niveles de los jugadores rondan entre el lvl 6 a 8.
-
-**Mid Game:** se incia con la destrucción de la primera torre o un corto tiempo despues, se caracteríza por la rotación de los jugadores en el mapa, quienes tratan de ganar al equipo contrario en la consecución de algun objetivo importante. Esta fase dura hasta que los jugadores comienzen a agruparse como equipo(5) o eventualmente 4 con alguien haciendo *"split push"*. En esta fase los jugadores suelen terminar su 2° o 3° item y alcanzan entre nivel 11 a 14.
-
-**Late Game:** se inicia cuando los jugadores se agrupan para destruír el Nexo enemigo. En esta fase suelen cobrar relevancia ciertos objetivos globales como *Baron* o *Elder Dragon* los cuales otorgan de stats de forma temporal a todos los miembros de un equipo. Esa etapa dura hasta que se termine el juego (pero es posible que un juego termine antes de haberla alcanzado).
-
-Para hacer la previa caracterización de las fases del juego revisamos diversas discusiones de los usuarios en foros o sitios similares. Nuestras principales fuentes fueron las siguientes:
-
-- [Discusión en Reddit](https://www.reddit.com/r/leagueoflegends/comments/8u96ip/when_is_early_game_mid_game_and_late_game/)
-- [Artículo en Mobafire](https://www.mobafire.com/league-of-legends/build/advanced-game-phase-breakdown-223875)
-- [Discusión en el foro de LoL del server de NA](http://forums.na.leagueoflegends.com/board/showthread.php?t=642319)
- 
-##### CALCULO COMPARATIVO
-
-Para efectos de nuestro calculo comparativo delimitamos los rangos de nivel que corresponden a cada etapa del juego de la siguiente manera:
-
-- Early: niveles 1-7.
-- Mid: niveles 8-13.
-- Late: niveles 14-18.
-
-En base a la data que disponemos para trabajar en nuestra aplicación es posible calcular que stats tendrá un determinado champion a un determinado nivel (ya que contamos con los stats iniciales y stat growth), esto hace posible comparar, nivel a nivel, a los champions. Es posible que el champ A tenga mejores stats iniciales que el champ B, y que esto se mantenga por 6 niveles (por ejemplo), luego de lo cual el champ B por tener mejor stat growth (crecimiento de stats por nivel) supere al champion A.
-
-Para que la información mostrada al usuario sea aún más relevante pretendemos cruzar esta información a los nieveles promedio de las 3 etapas de juego (early - mid - late) para que así el usuario pueda ver que champion es mejor en early, mid o late game y así elegir de acuerdo a su estrategia de juego o preferencia.
-
+Para efectos de nuestro grafico comparativo nuestra función `averageStats` toma los filtros que el usuario elija y con los champions que cumplan las condiciones saca un promedio de todos sus stats. Para el grafico inicial se muestra un promedio de todos los champions pero el usuario dispone de un select para poder filtrar los champions con los que se hara este promedio.
 
 #### PROTOTIPO DE BAJA FIDELIDAD
 
@@ -145,12 +120,16 @@ En la parte superior izquierda de la interfaz de Inicio se ve el logo de la App,
 
 
 
-### SEGUNDA SEMANA/SPRINT
 
-#### BDD
+
+#### TDD
 
 Para que nos sirviera de guía a nuestro proyecto enunciamos una serie de tests que describen la forma en que el usuario podrá manipular la data en nuestra aplicación, estos estan enfocados en comprobar 3 tipos de funciones:
 
 - Función de filtrado `championManage.filterData(data, condition)`, los test estan orientados a comprobar que los filtros se apliquen correctamentena las distintas condiciones y que las condiciones de filtrado se puedan utilizar copulativamente.
 
-- Función de orden de datos
+- Función de orden de datos `championManage.sortData(data, sortBy, sortOrder`, orientados a comprobar que se reorganizen segun las preferencias del usuario el arreglo con los champions.
+
+- Función de calculo agregado `championManage.averageStats(data)`, orientados a corroborar que los calculos de promedio que muestra esta función sean correctos.
+
+- Función de busqueda `championManage.searchChamp(data, searching)`, buscan comprobar que al ingresar una determinada palabra como campo de busqueda la función devuelva un arreglo con todos los champions que contengan dicha palabra en su nombre, independiente de mayusculas o minusculas.
