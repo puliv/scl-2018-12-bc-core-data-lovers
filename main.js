@@ -480,14 +480,7 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
 //         }
 //     }
 // });
-fetch('data/lol/lol.json')
-    .then(data => data.json())
-    .then (data => {
-    for (let champ in data.data) {
-        window.championData.push(data.data[champ]);
-        }
-        showChampsData()
-    })
+
 
 function showChampsData() {
     
@@ -550,7 +543,7 @@ document.getElementById("flame").addEventListener("click", (evento) => {
     // document.getElementById("filters").style.display = "none";
     document.getElementById("root").style.display = "none";
     // document.getElementById("general-champ-container").style.display = "none";
-    // document.getElementById("about-lolapp-section").style.display = "none";
+    document.getElementById("about-lolapp-section").style.display = "none";
     // document.getElementById("individual-champs").style.display = "none";
     window.location.href = "#header";
 
@@ -563,7 +556,7 @@ document.getElementById("about-lolapp").addEventListener("click", (evento) => {
     // document.getElementById("filters").style.display = "none";
     document.getElementById("root").style.display = "none";
     // document.getElementById("general-champ-container").style.display = "none";
-    // document.getElementById("flame-section").style.display = "none";
+    document.getElementById("flame-section").style.display = "none";
     // document.getElementById("individual-champs").style.display = "none";
     window.location.href = "#header";
 
