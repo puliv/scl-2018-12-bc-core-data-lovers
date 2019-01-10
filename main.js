@@ -154,6 +154,7 @@ let championImages = document.getElementsByClassName("img-champion");
 let championSprites = document.getElementsByClassName("champ-sprite");
 
 function champIndividualDiv(data, img) {
+    ImageMap('img[usemap]'); 
     for (let i= 0; i<img.length; i++) {
         img[i].addEventListener("click", () => {
             window.location.href = "#header";
