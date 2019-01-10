@@ -23,7 +23,7 @@ body {
 
 
 #about-lolapp, #champions, #flame {
-    font-family: "Beaufort";
+    /* font-family: "Beaufort";
     color: #F1E6D0;
     background-color: transparent;
     outline: none;
@@ -35,7 +35,7 @@ body {
     margin-left: 10vw;
     padding: 0;
     position: relative;
-    cursor: pointer;
+    cursor: pointer; */
     z-index: 2;
 }
 
@@ -59,6 +59,7 @@ body {
 
 div.card.col.s3 {
     text-align: left;
+    min-height: 216px;
 }
 
 
@@ -188,13 +189,14 @@ input.select-dropdown.dropdown-trigger {
 
 #individual-champs {
     position: relative;
-    top: -10vw;
+    top: -5vw;
     display: none;
     z-index: 1;
 }
 
 #champ-name-title {
     color: #F1E6D0;
+    z-index: 1;
 }
 
 #champ-name {
