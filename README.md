@@ -120,3 +120,7 @@ Para que nos sirviera de guía a nuestro proyecto enunciamos una serie de tests 
 - Función de calculo agregado `championManage.averageStats(data)`, orientados a corroborar que los calculos de promedio que muestra esta función sean correctos.
 
 - Función de busqueda `championManage.searchChamp(data, searching)`, buscan comprobar que al ingresar una determinada palabra como campo de busqueda la función devuelva un arreglo con todos los champions que contengan dicha palabra en su nombre, independiente de mayusculas o minusculas.
+
+### PROPUESTAS DE MEJORA
+
+En futuras versiones de LOLApp planeamos

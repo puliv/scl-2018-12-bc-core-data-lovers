@@ -28,7 +28,7 @@ body {
     background-color: transparent;
     outline: none;
     border: none;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     top: -8.7vw;
     border: 0;
     margin-right: 10vw;
@@ -155,7 +155,7 @@ div#filters.container.row.center-align {
 
 div#champ-container.container.row {
     position: relative;
-    top: 10vw;
+    top: 13vw;
     justify-content: space-around;
     /* display:none; */
 }
@@ -249,7 +249,7 @@ td, th {
     div#champ-container-mobile.container.row {
         width: 90%;
         position: relative;
-        top: 25vw;
+        top: 30vw;
         justify-content: space-around;
     }
 }
@@ -261,7 +261,7 @@ td, th {
     #champ-container-mobile {
         display: block;
         position: relative;
-        top: 10vw;
+        top: 12vw;
 
     }
     html {
@@ -375,4 +375,16 @@ color: #f1e6d0;
 
 .champ-sprite {
     cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#about-lolapp, #champions, #flame {
+    top: -8.2vw;
+}
+
+#champions {
+    left: -2.5vw;
 }
