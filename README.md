@@ -1,5 +1,56 @@
 # DISEÑO DEL PRODUCTO
+## HISTORIAS DE USUARIO
+
+
+**Colomba, 20 años**, lleva más de 4 años jugando LoL, ha sido víctima de algún tipo de discriminación durante el juego, le gustaría poder denunciar los hechos en el momento, pero siempre sucede cuando se encuentra en la parte que requiere más concentración, y no quiere perder tiempo valioso que puede significar perder la partida.
+
+*Como -Rol- Quien?:* Colomba, jugadora de LoL hace más de 4 años.
+
+*Quiero -Funcionalidad- Que?*: Quiere denunciar situaciones de discriminación en el momento oportuno sin perjudicar su performance.
+
+*Para -Razón- Por que*: Porque está cansada de tener que soportar a jugadores que la insultan por ser mujer y equivocarse.
+
+**Daniela, 19 años**, lleva entre 1 y 4 años jugando LoL, ha sido víctima de algún tipo de discriminación durante el juego, cuando empezó le costó mucho subir de nivel ya que no sabía cómo funcionaban los personajes y la plataforma de LoL le parecía muy confusa, aprendió jugando, cometiendo errores, y soportando a jugadores que la insultaban por ser primeriza; cuenta que habría sido más fácil poder avanzar si hubiera existido una “guía” más amigable para entender el juego que la que ofrece LoL.
+
+*Como -Rol- Quien?*: Daniela, juega LoL hace aproximadamente 4 años.
+
+*Quiero -Funcionalidad- Que?*: No sea tan difícil ni dramático para otras mujeres empezar a jugar LoL para que no desistan en su primer intento y pueda aumentar el número de jugadoras en la plataforma.
+
+*Para -Razón- Por qué?*: Porque es un juego dominado por hombres y cree que la participación de mujeres solo enriquecería la comunidad. 
+
+**Camila, 16 años**, lleva jugando LoL entre 1 y 4 años, ha sido víctima de algún tipo de discriminación durante el juego, aprendió a jugar gracias a su novio, que le enseñó a desempeñarse en el juego como él lo hacía pero cree que no es necesario tener una conducta tan violenta con los compañerxs de equipo si llegan a cometer un error ya que son humanos y todos nos equivocamos.
+
+*Como -Rol- Quién?*: Camila que juega LoL hace un par de años. 
+
+*Quiero -Funcionalidad- Que?*: Que exista alguna página que muestre cómo funciona el juego de una forma más “neutral” que la que aprendió con su pareja y no tan complicada como las que ya existen. 
+
+*Para -Razón- Por que?*: Cree que el respeto es lo primero que se pierde en el juego, y que debería ser ley mantenerlo para sustentar la convivencia sana entre jugadores de todos los niveles, géneros y culturas. 
+
+**Pamela, 15 años**, lleva jugando LoL entre 1 y 4 años, NO ha sido víctima de algún tipo de discriminación durante el juego, y cree que eso se debe a que antes de jugar se informo bien del funcionamiento del juego, los personajes y las reglas pero que no fue fácil ya que la información se encontraba esparcida en diferentes sitios e idiomas, lo cual le tomó bastante tiempo poder entenderlo y aplicarlo para ganar las partidas y subir de nivel.
+
+*Como -Rol- Quien?*: Pamela, lleva jugando LoL entre 1 y 4 años.
+
+*Quiero -Funcionalidad- Que?*: Que haya sitios donde se pueda encontrar la información que se necesita para empezar a jugar en un solo idioma, y que ocupe un lenguaje más amigable con los que están recién aprendiendo.
+
+*Para -Razón- Por que?*: Porque la plataforma entrega información que es abrumante y confusa para las principiantes ya que usa términos muy técnicos y que al traducirlos al español pierden el sentido.
+
+**Claudia, 23 años**, lleva jugando LoL entre 1 y 4 años, ha sido víctima de discriminación durante el juego, piensa que esto se debe a que los juegos en línea están diseñados por y para hombres, y que a las mujeres se les dificulta mucho el camino ya que no cuentan con información precisa para comenzar y el ambiente de juego es bastante agresivo. Cree que para reducir esto es necesario entregar herramientas realmente útiles a las mujeres que estan recien empezando para que jueguen con conocimiento y desarrollen su estilo de juego.
+
+*Como -Rol- Quien?*: Claudia, jugadora de LoL hace casi 3 años.
+
+*Quiero -Funcionalidad- Que?*: Exista un sitio que entregue información clara y de calidad sobre el funcionamiento del juego.
+
+*Para -Razón- Por que?*: Porque al disminuir la brecha de género en el juego aumentaría la diversidad de estrategias, de estadísticas y el juego evolucionaria para mejor.
+
+## DEFINICIÓN DEL PROPÓSITO DE LA PÁGINA
+
+¿Quiénes son los principales usuarios de producto?
+A partir de los resultados de nuestra encuesta podemos deducir que los principales usuarios del Juego son hombres de 16 a 31 años aprox. La cantidad de mujeres que ocupan la plataforma es bajísima, las cuales en más de una ocasión han sido discriminadas, ya sea por género, nacionalidad, u otro motivo. Por lo tanto queremos dirigir la pagina a mujeres que estan recien empezando; orientarlas en cuanto a la elección de un campeón y a que hacer en situaciones donde han sido víctimas de violencia verbal.
+
+
 ## FASE DE PLANIFICACIÓN
+
+La **organización de las tareas** se realizó en la plataforma de GitHub, utilizando los [Issues](https://github.com/RaquelCC/scl-2018-12-bc-core-data-lovers/issues?q=is%3Aissue+is%3Aclosed) y [Projects](https://github.com/RaquelCC/scl-2018-12-bc-core-data-lovers/projects?query=is%3Aclosed).
 
 La primera labor que se realizó fue determinar qué tareas realizaríamos en nuestra primera semana/sprint de trabajo, se optó por **dedicar el primer sprint integramente a tareas de UX** que nos permitieran enfocar en el usuario nuestra página y que nos servirian de guía a todo el proceso creativo de la aplicación, las tareas que determinamos en este primer sprint fueron las siguientes:
 - Elaborar una encuesta a través de un formulario de Google que nos ayude a determinar el usuario al que estaría enfocada nuestra aplicación.
@@ -148,4 +199,10 @@ Para que nos sirviera de guía a nuestro proyecto enunciamos una serie de tests 
 
 ### PROPUESTAS DE MEJORA
 
-En futuras versiones de LOLApp planeamos
+En futuras versiones de LOLApp planeamos agregar nuevo contenido a la página, utilizando la interacción de las [APIs de LOL](https://developer.riotgames.com/static-data.html), las cuales nos permitiran mostrar información adicional como:
+
+- Skills (habilidades) de los champions.
+- Skins de cada champion.
+- Consejos al usuario al jugar CON o CONTRA cada champion.
+
+Lo anterior permitirá complementar la información que contiene actualmente la página y dirigirla a lo que los usuarios creen útil y necesario de acuerdo a la encuesta realizada al inicio de nuestro proyecto, en la fase de definición del producto.
