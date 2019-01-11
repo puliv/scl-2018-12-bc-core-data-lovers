@@ -1,5 +1,3 @@
-ImageMap('img[usemap]');               //  ACA LO DEL RESOPNSIVE IMAGE MAP
-
 // fetch local porque la data de la api viene distinta
 fetch('data/lol/lol.json')
     .then(data => data.json())
@@ -7,6 +5,7 @@ fetch('data/lol/lol.json')
     for (let champ in data.data) {
         window.championData.push(data.data[champ]);
         }
+        window.ImageMap('img[usemap]'); 
         showChampsData();
     })
 
@@ -154,7 +153,7 @@ let championImages = document.getElementsByClassName("img-champion");
 let championSprites = document.getElementsByClassName("champ-sprite");
 
 function champIndividualDiv(data, img) {
-    ImageMap('img[usemap]'); 
+    window.ImageMap('img[usemap]'); 
     for (let i= 0; i<img.length; i++) {
         img[i].addEventListener("click", () => {
             window.location.href = "#header";
