@@ -68,7 +68,7 @@ describe('championManage.filterData', () => {
   it('Debería devolver a los champions "Ahri, Evelynn, Kassadin, Katarina, LeBlanc, Malzahar, Xerath" para championManage.filterData(championData, ["Assassin", "Mage"])', () => {
     let champsAssa = () => {
       let namesArray = [];
-      championManage.filterData(window.championsTest(), ["Assassin", "Mage", "Ranged"]).forEach(champ => {
+      window.championManage.filterData(window.championsTest(), ["Assassin", "Mage", "Ranged"]).forEach(champ => {
         namesArray.push(champ.name)
       });
       return namesArray;
@@ -93,7 +93,7 @@ describe('championManage.filterData', () => {
   it('Debería devolver a los champions "Ahri, LeBlanc, Malzahar, Xerath" para championManage.filterData(championData, ["Assassin", "Mage", "Ranged")]', () => {
     let champsAssa = () => {
       let namesArray = [];
-      championManage.filterData(window.championsTest(), ["Assassin", "Mage"]).forEach(champ => {
+      window.championManage.filterData(window.championsTest(), ["Assassin", "Mage"]).forEach(champ => {
         namesArray.push(champ.name)
       });
       return namesArray;
@@ -104,7 +104,7 @@ describe('championManage.filterData', () => {
   it('Debería devolver a los champions "Aatroz, Akali, Dr. Mundo" para championManage.filterData(championData, ["Other"]', () => {
     let champsAssa = () => {
       let namesArray = [];
-      championManage.filterData(window.championsTest(), ["Other"]).forEach(champ => {
+      window.championManage.filterData(window.championsTest(), ["Other"]).forEach(champ => {
         namesArray.push(champ.name)
       });
       return namesArray;

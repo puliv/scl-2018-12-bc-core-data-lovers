@@ -1,46 +1,3 @@
-
-//PROBANDO CLASS ELEMENT PARA EL DOM Y FUNCION QUE LE AGREGA FUNCIONES A LAS CLASES
-// document.getElementById('para-probar').innerHTML += `
-// <button type="button" class="probando">Probando</button>
-// `;
-// let probando = document.getElementsByClassName('probando')
-
-// // para el select
-// document.getElementById('pet-select').addEventListener('change', () => {
-//     alert(document.getElementById('pet-select').value);
-// })
-
-// function again() {
-//     for (let i = 0; i < probando.length; i++) {
-//     probando[i].addEventListener('click', () => {
-//         document.getElementById('para-probar').innerHTML += `hola ${i}`;
-//         document.getElementById('para-probar').innerHTML += `<button type="button" class="probando">Probando</button>`
-//         again();
-// })
-
-// }
-// }
-// again();
-
-
-
-
-// todo lo anterior es una buena idea para no tener problemas con las id de los objetos html
-// al querer asignarle un eventlistener si fueron creados con html
-
-
-// document.getElementById('fetcheame').addEventListener('click', ()=> {
-//     fetch('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
-//     .then(data => data.json())
-//     .then (data => {
-//     for (let champ in data.data) {
-//         championData.push(data.data[champ]);
-//         }
-//     })
-//     .then(() => console.log(championData))
-// })
-
-
 // fetch local porque la data de la api viene distinta
 fetch('data/lol/lol.json')
     .then(data => data.json())
@@ -48,18 +5,16 @@ fetch('data/lol/lol.json')
     for (let champ in data.data) {
         window.championData.push(data.data[champ]);
         }
+        window.ImageMap('img[usemap]'); 
         showChampsData();
     })
 
-
 // inicializador del select materialize
-
 document.addEventListener('DOMContentLoaded', function() {
     window.M.AutoInit();
   });
 
-
-  // funcion que me crea las tarjetidas de cada champ, para version desktop y mobile
+// funcion que me crea las tarjetidas de cada champ, para version desktop y mobile
 function showChamps (data) {
     document.getElementById("champ-container").innerHTML = "";
     document.getElementById("champ-container-mobile").innerHTML = "";
@@ -100,7 +55,6 @@ function showChamps (data) {
 
 // HTMLCollection con los canvases y array para guardar los gráficos que van al otro lado de las
 // tarjetidas de cada champ
-
 let championGraphsCanvases = document.getElementsByClassName("champion-chart");
 let championCharts = [];
 
@@ -151,13 +105,10 @@ function initializeCharts (data) {
     }
 }
 
-    
 // interacción filtros
 document.getElementById("champion-filters").addEventListener("change", userInteract);
 
-
-
-// interacción selects de ordenar
+// interacción usuario 
 function userInteract() {
     if (document.getElementById("name").value === ""){
         return;
@@ -195,66 +146,14 @@ function userInteract() {
     champIndividualDiv(window.championManage.searchChamp(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder), document.getElementById("search-input").value), championSprites);
 
 }
-document.getElementById("name").addEventListener("change", userInteract/*() => {
-    if (document.getElementById("name").value === ""){
-        return;
-    }
-    let filtersActive = [];
-    const filters = document.getElementsByClassName("filter");
-    for (let i = 0; i<filters.length; i++) {
-        if (filters[i].checked === true) {
-            filtersActive.push(filters[i].value);
-        }
-    }
-    let sortBy;
-    let sortOrder;
-    switch (document.getElementById("name").value) {
-        case "az":
-            sortBy = "name";
-            sortOrder = "ascending";
-            break;
-        case "za":
-            sortBy = "name";
-            sortOrder = "descending";
-            break;
-        case "oldest":
-            sortBy = "key";
-            sortOrder = "ascending";
-            break;
-        case "newest":
-            sortBy = "key";
-            sortOrder = "descending"
-            break;
-    }
-    showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
-    initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
-    champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), sortBy,sortOrder));
-    
-}*/)
-
-// document.getElementById("key").addEventListener("change", () => {
-//     if (document.getElementById("key").value === ""){
-//         return;
-//     }
-//     let filtersActive = [];
-//     const filters = document.getElementsByClassName("filter");
-//     for (let i = 0; i<filters.length; i++) {
-//         if (filters[i].checked === true) {
-//             filtersActive.push(filters[i].value);
-//         }
-//     }
-//     showChamps(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
-//     initializeCharts(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
-//     champIndividualDiv(window.championManage.sortData(window.championManage.filterData(window.championData, filtersActive), "key", document.getElementById("key").value));
-    
-// })
-
+document.getElementById("name").addEventListener("change", userInteract)
 
 // función que le asigna a cada imagen una función que genera la página individual del champion
 let championImages = document.getElementsByClassName("img-champion");
 let championSprites = document.getElementsByClassName("champ-sprite");
 
 function champIndividualDiv(data, img) {
+    window.ImageMap('img[usemap]'); 
     for (let i= 0; i<img.length; i++) {
         img[i].addEventListener("click", () => {
             window.location.href = "#header";
@@ -363,6 +262,7 @@ function champIndividualDiv(data, img) {
                 <canvas id="compare-chart">
                 
                 </canvas>
+            </div>
                        
             `;
             //inicializa select de esta pagina
@@ -432,55 +332,8 @@ function champIndividualDiv(data, img) {
 document.getElementById("search-input").addEventListener("keydown", (e) => {
     if (e.keyCode === 13) {
         userInteract();
-        /*let filtersActive = [];
-        const filters = document.getElementsByClassName("filter");
-        for (let i = 0; i<filters.length; i++) {
-            if (filters[i].checked === true) {
-                filtersActive.push(filters[i].value);
-            }
-        }
-        showChamps(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
-        initializeCharts(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));
-        champIndividualDiv(window.championManage.searchChamp(window.championManage.filterData(championData, filtersActive), document.getElementById("search-input").value));*/
-    }
+       }
 })
-
-
-// var ctx = document.getElementById("compare-chart").getContext('2d');
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ["HP", "HP per lvl", "BloodWell", "BloodWell per lvl", "Movement Speed", "Armor", "Armor per lvl", "Spellblock", "Spellblock per lvl", "Attack Range", "HP Regen", "HP Regen per lvl", "MP Regen", "MP Regen per lvl", "Crit", "Crit per lvl", "Attack Damage", "Attack Damage per lvl", "Attack Speed", "Attack Speed per lvl"],
-//         datasets: [{
-//             label: 'Aatrox',
-//             data: [537.8, 85, 105.6, 45, 345, 24.384, 3.8, 32.1, 1.25, 150, 6.59, 0.5, 0, 0, 0, 0, 60.376, 3.2, -0.04, 3],
-//             backgroundColor: 'rgba(255, 99, 132, 0.2)',
-//             borderWidth: 1
-//         },
-//         {
-//             label: 'Champ Promedio',
-//             data: [537.8, 85, 105.6, 45, 345, 24.384, 3.8, 32.1, 1.25, 150, 6.59, 0.5, 0, 0, 0, 0, 60.376, 3.2, -0.04, 3],
-//             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-//             borderWidth: 1
-//         }
-//     ],
-        
-//     },
-//     options: {
-//         tooltips: {
-//             intersect: false
-//         },
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true,
-//                     stepSize: 50
-//                 }
-//             }]
-//         }
-//     }
-// });
-
 
 function showChampsData() {
     
@@ -489,53 +342,9 @@ function showChampsData() {
     champIndividualDiv(window.championData, championImages);
     champIndividualDiv(window.championData, championSprites);
 }
-// window.onload = showChampsData;
 
 
-// graficos de stats
-
-
-// var ctx = document.getElementById("myChart");
-// var myChart = new Chart(ctx, {
-    //     type: 'horizontalBar',
-    //     data: {
-        //         labels: ["Attack", "Defense", "Magic", "Dificulty"],
-        //         datasets: [{
-            //             // label: '# of Votes',
-            //             data: [8, 4, 3, 4],
-            //             backgroundColor: [
-                //                 'rgba(255, 99, 132, 0.2)',
-                //                 'rgba(54, 162, 235, 0.2)',
-                //                 'rgba(255, 206, 86, 0.2)',
-                //                 'rgba(75, 192, 192, 0.2)'
-                //             ],
-//             borderColor: [
-//                 'rgba(255,99,132,1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         maintainAspectRatio: true,
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero:true
-//                 }
-//             }]
-//         },
-//         legend: {
-//             display: false
-//         },
-//         tooltips: {
-//             position: 'average'
-//         }
-//     }
-// });
-
+// funcionalidad botones del image-map
 document.getElementById("flame").addEventListener("click", (evento) => {
     evento.preventDefault();
 
@@ -593,7 +402,9 @@ function back() {
     }, 300)
 }
 
+// preloader
 window.addEventListener("load", () => {
     document.getElementById("preloader").style.display = "none";
     document.getElementById("root").className = "";
 })
+
