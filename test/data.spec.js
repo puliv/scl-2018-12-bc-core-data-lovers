@@ -112,7 +112,29 @@ describe('championManage.filterData', () => {
     window.assert.deepEqual([champsAssa()[0], champsAssa()[1], champsAssa()[2]],["Aatrox", "Akali", "Dr. Mundo"] )
   });
   
-});
+
+it('Debería devolver a los champions "Aatroz, Akali, Dr. Mundo" para championManage.filterData(championData, ["Other"]', () => {
+  let champsAssa = () => {
+    let namesArray = [];
+    championManage.filterData(window.championsTest(), ["Other"]).forEach(champ => {
+      namesArray.push(champ.name)
+    });
+    return namesArray;
+  }
+  window.assert.deepEqual([champsAssa()[0], champsAssa()[1], champsAssa()[2]],["Aatrox", "Akali", "Dr. Mundo"])
+  });
+
+  it('Debería devolver a los champions "Alistar, Amumu, Blitzcrank" para championManage.filterData(championData, ["MP", "Melee]', () => {
+    let champsAssa = () => {
+      let namesArray = [];
+      window.championManage.filterData(window.championsTest(), ["MP", "Melee"]).forEach(champ => {
+        namesArray.push(champ.name)
+      });
+      return namesArray;
+    }
+    window.assert.deepEqual([champsAssa()[0], champsAssa()[1], champsAssa()[2]],["Alistar", "Amumu", "Blitzcrank"])
+    });
+});  
 
 describe('championManage.averageStats', () => {
   it('championManage.averageStats debería ser una función', () => {
@@ -132,6 +154,10 @@ describe('championManage.averageStats', () => {
   it('Debería devolver al champion "Xerath" al aplicar la funcion window.championManage.searchChamp(championData, "xerath")', () => {
     window.assert.deepEqual(window.championManage.searchChamp(window.championsTest(), "xerath")[0].name, "Xerath")
   });
-
+  
+ // test para la funcion search
+ it('Debería devolver al champion "Xerath" al aplicar la funcion window.championManage.searchChamp(championData, "xerath")', () => {
+   window.assert.deepEqual(window.championManage.searchChamp(window.championsTest(), "xerath")[0].name, "Xerath")
+ });
 
 });

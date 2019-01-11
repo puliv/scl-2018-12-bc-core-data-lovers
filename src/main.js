@@ -336,6 +336,7 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
 })
 
 function showChampsData() {
+    
     showChamps(window.championData);
     initializeCharts(window.championData);
     champIndividualDiv(window.championData, championImages);
@@ -354,7 +355,6 @@ document.getElementById("flame").addEventListener("click", (evento) => {
     document.getElementById("about-lolapp-section").style.display = "none";
     // document.getElementById("individual-champs").style.display = "none";
     window.location.href = "#header";
-
 
 });
 

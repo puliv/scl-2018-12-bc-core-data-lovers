@@ -64,7 +64,8 @@ div.card.col.s3 {
 
 
 .card {
-    border: 1px solid #F1E6D0;
+    margin: 1vw 3.2vw;
+    border: 1px solid #937341;
     border-radius: 10px;
     background: #0A0A0C;
     color: #F1E6D0;
@@ -139,10 +140,10 @@ div#filters.container.row.center-align {
 
 
 #name-order, #release-order {
+    /* float: right; */
     color: #c9aa71;
     background-color: #0A0A0C;
     border: 1px solid #F1E6D0;
-
 }
 
 #sort-options {
@@ -223,7 +224,9 @@ td, th {
     top: 6vw;
 }
 
-
+h2 {
+    text-align: center;
+}
 
 @media only screen and (max-width: 845px) {
     #champions, #flame, #about-lolapp{
@@ -249,6 +252,7 @@ td, th {
 
 @media only screen and (max-width: 667px) {
     div#champ-container-mobile.container.row {
+        margin: 0;
         width: 90%;
         position: relative;
         top: 30vw;
@@ -300,7 +304,7 @@ color: #f1e6d0;
 
 #image-report, #image-report-two, #image-lolapp{
     padding: 5px;
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: #937341;
 }
@@ -361,14 +365,14 @@ color: #f1e6d0;
 
 #button1, #button2{
     background-color: #0a0a0c;
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: #937341;
-    line-height: 30px !important;
+    line-height: 35px !important;
     }
 
 #button1:hover, #button2:hover{
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: white;
 }
