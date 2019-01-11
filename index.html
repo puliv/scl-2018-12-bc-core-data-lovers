@@ -13,12 +13,15 @@
   </head>
   <body>
     <header id="header">
-      <img id="img-header" class="responsive-img" src="Img/img-header.png" alt="Fondo Runaterra">
-      <div id="nav-buttons" class="center-align">
-        <button id="about-lolapp">Sobre LOLApp</button>
-        <button id="champions">Champions</button>
-        <button id="flame">Flame</button>
-      </div>
+
+      <img id="img-header" src="Img/img-header2.png" class="responsive-img" usemap="#image-map" alt="Fondo Runaterra">
+
+      <map name="image-map">
+          <area  id="about-lolapp" coords="313,223,557,288" shape="rect">
+          <area  id="champions" coords="841,223,1061,291" shape="rect">
+          <area  id="flame" coords="1422,220,1599,291" shape="rect">
+      </map>
+
     </header>
   <section id="about-lolapp-section">
     <h2>Sobre Lolapp</h2>
@@ -150,9 +153,16 @@
         <div id="individual-champs" class="container row">  
         </div>
     </div>
-    <script src="./data/lol/lol.js"></script>
+
+    <!-- <script src="./data/injuries/injuries.js"></script> -->
+    <script src="./data/pokemon/pokemon.js"></script>
+    <!-- <script src="./data/steam/steam.js"></script> -->
+    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+    <!-- <script src="./data/lol/lol.js"></script> -->
+    <script src="https://unpkg.com/image-map/dist/image-map.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
+
   </body>
 </html>

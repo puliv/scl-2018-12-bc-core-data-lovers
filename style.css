@@ -23,19 +23,19 @@ body {
 
 
 #about-lolapp, #champions, #flame {
-    font-family: "Beaufort";
+    /* font-family: "Beaufort";
     color: #F1E6D0;
     background-color: transparent;
     outline: none;
     border: none;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     top: -8.7vw;
     border: 0;
     margin-right: 10vw;
     margin-left: 10vw;
     padding: 0;
     position: relative;
-    cursor: pointer;
+    cursor: pointer; */
     z-index: 2;
 }
 
@@ -59,6 +59,7 @@ body {
 
 div.card.col.s3 {
     text-align: left;
+    min-height: 216px;
 }
 
 
@@ -156,7 +157,8 @@ div#filters.container.row.center-align {
 
 div#champ-container.container.row {
     position: relative;
-    top: 10vw;
+    top: 13vw;
+    justify-content: space-around;
     /* display:none; */
 }
 
@@ -188,13 +190,14 @@ input.select-dropdown.dropdown-trigger {
 
 #individual-champs {
     position: relative;
-    top: -10vw;
+    top: -5vw;
     display: none;
     z-index: 1;
 }
 
 #champ-name-title {
     color: #F1E6D0;
+    z-index: 1;
 }
 
 #champ-name {
@@ -252,8 +255,8 @@ h2 {
         margin: 0;
         width: 90%;
         position: relative;
-        top: 25vw;
-        /* left: 3vw; */
+        top: 30vw;
+        justify-content: space-around;
     }
 }
 
@@ -264,7 +267,7 @@ h2 {
     #champ-container-mobile {
         display: block;
         position: relative;
-        top: 10vw;
+        top: 12vw;
 
     }
     html {
@@ -339,6 +342,12 @@ color: #f1e6d0;
     }
 }
 
+@media only screen and (max-width: 320px){
+    div#champ-container-mobile.row{
+        top: 45vw !important;
+    }
+}
+
 @media only screen and (max-width: 600px){
     #image-lolapp{
         width: 150%;
@@ -378,4 +387,16 @@ color: #f1e6d0;
 
 .champ-sprite {
     cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#about-lolapp, #champions, #flame {
+    top: -8.2vw;
+}
+
+#champions {
+    left: -2.5vw;
 }
