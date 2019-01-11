@@ -108,19 +108,31 @@ Para dar al usuario la mayor cantidad de información útil posible decidimos qu
 
 ##### CHAMPION PROMEDIO
 
-Para efectos de nuestro grafico comparativo nuestra función `averageStats` toma los filtros que el usuario elija y con los champions que cumplan las condiciones saca un promedio de todos sus stats. Para el grafico inicial se muestra un promedio de todos los champions pero el usuario dispone de un select para poder filtrar los champions con los que se hara este promedio.
+Para efectos de nuestro grafico comparativo nuestra función `averageStats` toma los filtros que el usuario elija y con los champions que cumplan las condiciones saca un promedio de todos sus stats. Para el grafico inicial se muestra un promedio de todos los champions pero el usuario dispone de un select para poder filtrar los champions con los que se hará este promedio.
 
 #### PROTOTIPO DE BAJA FIDELIDAD
 
-Según las respuestas del formulario, los usuarios que ocuparían la aplicación lo harían antes de una partida, por lo tanto, pensamos en un diseño amigable y funcional para que se concentren completamente en el contenido. Esto nos permitió desarrollar una trama más amplia ya que el usuario dispondrá de más tiempo para interactuar con la aplicación.
+Según las respuestas del formulario, los usuarios que ocuparían la aplicación lo harían antes de una partida, esto nos permitió desarrollar una trama más amplia ya que el usuario dispondrá de más tiempo para interactuar con la página, por lo tanto, pensamos en un diseño amigable y funcional. Creamos varias secciones; “Sobre LOLApp”, por ejemplo, la cual compartirá el encabezado con la interfaz principal (Todas las secciones lo harán), y habrá un texto explicando de que se trata el sitio y una imagen. 
+En la parte donde se visualizará la data estarán los Champions dentro de "tarjetas" donde se verán las caracteristicas generales de cada uno; dentro del menú principal establecimos la sección “Comparar Champions” (que cuenta con bloques de imágenes de los champions con sus estadísticas y comparaciones con otros champions). Y la sección "¿Te han flameado?" para explicar de que se trata el concepto "Flamear", que hacer en situaciones de discriminación y la opción de dejar un testimonio si la usuaria siente la necesidad de hacerlo.
 
-En la parte superior izquierda de la interfaz de Inicio se ve el logo de la App, al costado derecho está el encabezado de la página, abajo en el menú se visualizan las opciones de manejo de los champions (Filtrar, Ordenar y Estadísticas individuales de los Champions), el contenido sobre la App, y la sección de flame. Y la parte inferior se pueden ver los champions con sus características generales.
+#### Link Prototipos:
 
-![Image-Inicio](src/images/prototipo-baja-fidelidad/INICIO.png)
+ [Web](https://www.figma.com/file/UE7ncZ1gqI6vLWtXH6Xy6r0E/Prototipo-Baja-Fidelidad-LOLApp?node-id=0%3A1)
+
+ [Mobile (Iphone X)](https://www.figma.com/file/OOvnDLkhQz7FgnJFOuYCE6Da/LOLApp-Iphone-X?node-id=0%3A1)
+
+ [Mobile (Iphone X V2.0)](https://www.figma.com/file/EZlUoneiTHmkerXNQMST2C/LOLApp-Iphone-X(V2.0))
 
 
+#### TEST DE USABILIDAD
 
+Testeamos nuestro prototipo con dos usuaries que juegan LoL frecuentemente, no se les notó aproblemades para navegar por el prototipo, sabian donde ir para buscar algo especifico, entendian para que servian los elementos que se encontraban en las interfaces, y nos dieron una opinion bastante positiva y constructiva, y concluimos que debiamos modificar algunas caracteristicas.
 
+Decidimos eliminar la sección "Comparar Champions", y acomodamos el cálculo agregado para que pudiera verse cuando se clickeara sobre la tarjeta del Champion, consideraron que no era necesario hacer una sección exclusiva para eso ya que se apreciaria mejor la información si se pudiera ver directo "dentro" del campeón. 
+La falta de un botón de volver al inicio fue categórico, no consideraban "comodo" tener que volver a scrollear hasta arriba para ir a la pagina principal nuevamente. Por lo tanto agregamos botones de vuelta al inicio en el "bottom" de las secciones donde hay mucho texto.
+Determinamos que la opción para dejar un testimonio no era viable ya que no resolveriamos el problema del usuario, pero pensamos que informar sobre el proceso de denuncia ayuda a que al menos las usuarias sepan como proceder en una situacion de discriminacion.
+
+ 
 
 #### TDD
 

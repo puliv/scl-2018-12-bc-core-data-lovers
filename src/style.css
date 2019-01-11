@@ -64,7 +64,7 @@ div.card.col.s3 {
 
 .card {
     margin: 1vw 3.2vw;
-    border: 1px solid #F1E6D0;
+    border: 1px solid #937341;
     border-radius: 10px;
     background: #0A0A0C;
     color: #F1E6D0;
@@ -301,7 +301,7 @@ color: #f1e6d0;
 
 #image-report, #image-report-two, #image-lolapp{
     padding: 5px;
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: #937341;
 }
@@ -356,14 +356,14 @@ color: #f1e6d0;
 
 #button1, #button2{
     background-color: #0a0a0c;
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: #937341;
-    line-height: 30px !important;
+    line-height: 35px !important;
     }
 
 #button1:hover, #button2:hover{
-    border: solid;
+    border: 1px solid;
     border-radius: 10px;
     border-color: white;
 }
