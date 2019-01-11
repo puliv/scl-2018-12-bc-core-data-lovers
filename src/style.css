@@ -338,6 +338,12 @@ color: #f1e6d0;
     }
 }
 
+@media only screen and (max-width: 320px){
+    div#champ-container-mobile.row{
+        top: 45vw !important;
+    }
+}
+
 @media only screen and (max-width: 600px){
     #image-lolapp{
         width: 150%;
