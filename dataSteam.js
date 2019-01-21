@@ -27,3 +27,12 @@ dataNew.sort((a, b) => {
 return(dataNew)
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 };
+filterData: (data, condition) => {
+    const feedlabelFilter= [("tf2_blog"), ("Product Update"), ("PC Gamer"), ("Eurogamer"), ("Rock, Paper, Shotgun")];
+    let filteredData= data;
+    let filteredNews=data.filter(condition(data){
+        return data.feedlabel === feedlabelFilter."tf2_blog";
+    })
+    };
+};
+ console.log(filteredNews);

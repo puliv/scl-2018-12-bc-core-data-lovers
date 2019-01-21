@@ -1,0 +1,11 @@
+body {
+    background: url(IMG/hand_joystick.jpg);
+}
+
+.nav-wrapper {
+    background: #171a21;
+}
+nav .brand-logo {
+    margin-top: 9px;
+    margin-left: 20px;
+}
